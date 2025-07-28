@@ -1,0 +1,36 @@
+---
+- name: apache server install
+  hosts: node1
+  become: true
+
+  tasks:
+    - name: apache2 install
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: default config remove
+      ansible.builtin.shell: rm -rf /etc/apache2/sites-available/000-default.conf
+    - name: new web config file create
+      ansible.builtin.shell: touch /etc/apache2/sites-available/newWebConfig.conf
+    - name: web default path(index) change
+      ansible.builtin.shell: |
+        cat << 'EOF' > /etc/apache2/sites-available/newWebConfig.conf
+        <VirtualHost *:80>
+              ServerAdmin webmaster@localhost
+              DocumentRoot /var/www/html/test
+              ErrorLog ${APACHE_LOG_DIR}/error.log
+              CustomLog ${APACHE_LOG_DIR}/access.log combined
+        </VirtualHost>
+        EOF
+    - name: create apach index path directory create
+      ansible.builtin.shell: mkdir -p /var/www/html/test
+    - name: create index.html new index file
+      ansible.builtin.shell: |
+        cat << 'EOF' > /var/www/html/test/index.html
+        test ansible simulation~
+        EOF
+    - name: apache2 config apply
+      ansible.builtin.shell: a2ensite newWebConfig.conf
+    - name: apache2 service restart
+      ansible.builtin.shell: systemctl restart apache2

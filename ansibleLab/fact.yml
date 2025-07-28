@@ -1,0 +1,16 @@
+---
+- name: Update /etc/hosts on all nodes
+  hosts: node1
+  become: true  # 작업을 root 권한(sudo)으로 실행합니다.
+
+  tasks:
+    - name: Print IP address using facts
+      debug:
+        var: ansible_default_ipv4.address
+    - name: Get IP using shell
+      shell: ip addr
+      register: result
+    - debug:
+        var: result.stdout
+
+

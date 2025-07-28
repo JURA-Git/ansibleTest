@@ -1,0 +1,7 @@
+[user]
+	name = jura
+	email = hegs3@naver.com
+[credential]
+	helper = cache
+[safe]
+	directory = ./
