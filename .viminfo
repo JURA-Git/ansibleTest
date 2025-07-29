@@ -11,7 +11,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<name\>
+~MSle0~/For
 
 # Last Substitute Search Pattern:
 ~MSle0&    
@@ -20,16 +20,16 @@
 $
 
 # Command Line History (newest to oldest):
-:wq!
-|2,0,1753758375,,"wq!"
 :q!
-|2,0,1753756582,,"q!"
+|2,0,1753762706,,"q!"
+:wq!
+|2,0,1753762694,,"wq!"
+:w
+|2,0,1753760813,,"w"
 :Wq!
-|2,0,1753753312,,"Wq!"
+|2,0,1753760042,,"Wq!"
 :q
 |2,0,1753749368,,"q"
-:w
-|2,0,1753748171,,"w"
 :wq
 |2,0,1753747852,,"wq"
 :%s/    //g
@@ -46,6 +46,18 @@ $
 |2,0,1753337025,,"ㅈ"
 
 # Search String History (newest to oldest):
+?/Re
+|2,1,1753761971,47,"Re"
+?/ALTER USER
+|2,1,1753761624,47,"ALTER USER"
+?/For
+|2,1,1753761303,47,"For"
+?/db
+|2,1,1753760863,47,"db"
+?/.php
+|2,1,1753760696,47,".php"
+?/wordpress_
+|2,1,1753759804,47,"wordpress_"
 ? \<name\>
 |2,1,1753758371,,"\\<name\\>"
 ?/community.mysql
@@ -83,264 +95,350 @@ $
 
 # Registers:
 "0	LINE	0
-	    - vars/local.yml
-|3,0,0,1,1,0,1753748809,"    - vars/local.yml"
+	- import_playbook: dbPlaybook.yml
+|3,0,0,1,1,0,1753760035,"- import_playbook: dbPlaybook.yml"
 ""1	LINE	0
-	ubuntu@an-master:~/ansible-wordpress/templates$ cat wordpress.conf.j2
-|3,1,1,1,1,0,1753755440,"ubuntu@an-master:~/ansible-wordpress/templates$ cat wordpress.conf.j2"
+	        "mysql -u root -e \"FLUSH PRIVILEGES; ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';\""
+|3,1,1,1,1,0,1753762353,"        \"mysql -u root -e \\\"FLUSH PRIVILEGES; ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';\\\"\""
 "2	LINE	0
-	node1
-|3,0,2,1,1,0,1753753654,"node1"
+	changed_when: true
+|3,0,2,1,1,0,1753761775,"changed_when: true"
 "3	LINE	0
-	[all:children]
-|3,0,3,1,1,0,1753753654,"[all:children]"
+	      ansible.builtin.command: >
+|3,0,3,1,1,0,1753761769,"      ansible.builtin.command: >"
 "4	LINE	0
-	    - vars/local.yml
-|3,0,4,1,1,0,1753748814,"    - vars/local.yml"
+	            FLUSH PRIVILEGES;"
+|3,0,4,1,1,0,1753761767,"            FLUSH PRIVILEGES;\""
 "5	LINE	0
-	
-|3,0,5,1,1,0,1753748813,""
+	            ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';
+|3,0,5,1,1,0,1753761762,"            ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';"
 "6	LINE	0
-	  - name: jura.com
-|3,0,6,1,1,0,1753748650,"  - name: jura.com"
+	            ddmysql -u root -e "
+|3,0,6,1,1,0,1753761762,"            ddmysql -u root -e \""
 "7	LINE	0
-	commons:
-|3,0,7,1,1,0,1753748647,"commons:"
+	           mysql -u root -e "
+|3,0,7,1,1,0,1753761635,"           mysql -u root -e \""
 "8	LINE	0
-	  - name: jura.com
-|3,0,8,1,1,0,1753748570,"  - name: jura.com"
+	            FLUSH PRIVILEGES;"
+|3,0,8,1,1,0,1753761634,"            FLUSH PRIVILEGES;\""
 "9	LINE	0
-	  - name: jura.com
-|3,0,9,1,1,0,1753748569,"  - name: jura.com"
+	            ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';
+|3,0,9,1,1,0,1753761632,"            ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';"
 "-	CHAR	0
 	 
 |3,0,36,0,1,0,1753692864," "
 
 # File marks:
-'0  40  6  ~/toPlaybook/userANDfile.yml
-|4,48,40,6,1753758375,"~/toPlaybook/userANDfile.yml"
-'1  3  0  ~/test/ansible-wordpress/hosts
-|4,49,3,0,1753757716,"~/test/ansible-wordpress/hosts"
-'2  6  5  ~/test/ansible-wordpress/ansible.cfg
-|4,50,6,5,1753757373,"~/test/ansible-wordpress/ansible.cfg"
-'3  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,51,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
-'4  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,52,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
-'5  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
-|4,53,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
-'6  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
-|4,54,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
-'7  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,55,1,2,1753755294,"~/test/ansible-wordpress/playbook.yml"
-'8  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,56,1,2,1753755294,"~/test/ansible-wordpress/playbook.yml"
-'9  1  0  ~/test/ansible-wordpress/playbook.yml
-|4,57,1,0,1753754722,"~/test/ansible-wordpress/playbook.yml"
+'0  1  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,48,1,0,1753762706,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'1  75  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,49,75,0,1753762695,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'2  75  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,50,75,0,1753762695,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'3  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,51,114,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'4  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,52,40,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'5  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,53,114,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'6  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,54,40,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'7  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,55,114,7,1753762377,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'8  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,56,40,7,1753762377,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'9  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,57,114,7,1753762377,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
 
 # Jumplist (newest first):
--'  40  6  ~/toPlaybook/userANDfile.yml
-|4,39,40,6,1753758375,"~/toPlaybook/userANDfile.yml"
--'  33  0  ~/toPlaybook/userANDfile.yml
-|4,39,33,0,1753758371,"~/toPlaybook/userANDfile.yml"
--'  32  27  ~/toPlaybook/userANDfile.yml
-|4,39,32,27,1753758363,"~/toPlaybook/userANDfile.yml"
--'  3  0  ~/test/ansible-wordpress/hosts
-|4,39,3,0,1753757716,"~/test/ansible-wordpress/hosts"
--'  3  0  ~/test/ansible-wordpress/hosts
-|4,39,3,0,1753757716,"~/test/ansible-wordpress/hosts"
--'  1  0  ~/test/ansible-wordpress/hosts
-|4,39,1,0,1753757689,"~/test/ansible-wordpress/hosts"
--'  1  0  ~/test/ansible-wordpress/hosts
-|4,39,1,0,1753757689,"~/test/ansible-wordpress/hosts"
--'  6  5  ~/test/ansible-wordpress/ansible.cfg
-|4,39,6,5,1753757373,"~/test/ansible-wordpress/ansible.cfg"
--'  6  5  ~/test/ansible-wordpress/ansible.cfg
-|4,39,6,5,1753757373,"~/test/ansible-wordpress/ansible.cfg"
--'  6  5  ~/test/ansible-wordpress/ansible.cfg
-|4,39,6,5,1753757373,"~/test/ansible-wordpress/ansible.cfg"
--'  6  5  ~/test/ansible-wordpress/ansible.cfg
-|4,39,6,5,1753757373,"~/test/ansible-wordpress/ansible.cfg"
--'  10  17  ~/test/ansible-wordpress/ansible.cfg
-|4,39,10,17,1753757330,"~/test/ansible-wordpress/ansible.cfg"
--'  10  17  ~/test/ansible-wordpress/ansible.cfg
-|4,39,10,17,1753757330,"~/test/ansible-wordpress/ansible.cfg"
--'  10  17  ~/test/ansible-wordpress/ansible.cfg
-|4,39,10,17,1753757330,"~/test/ansible-wordpress/ansible.cfg"
--'  10  17  ~/test/ansible-wordpress/ansible.cfg
-|4,39,10,17,1753757330,"~/test/ansible-wordpress/ansible.cfg"
--'  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
--'  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
--'  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
--'  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
--'  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
--'  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
--'  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
--'  49  19  ~/test/ansible-wordpress/cleanup.yml
-|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
--'  1  0  ~/test/ansible-wordpress/cleanup.yml
-|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
--'  1  0  ~/test/ansible-wordpress/cleanup.yml
-|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
--'  1  0  ~/test/ansible-wordpress/cleanup.yml
-|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
--'  1  0  ~/test/ansible-wordpress/cleanup.yml
-|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
--'  1  0  ~/test/ansible-wordpress/cleanup.yml
-|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
--'  1  0  ~/test/ansible-wordpress/cleanup.yml
-|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
--'  1  0  ~/test/ansible-wordpress/cleanup.yml
-|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
--'  1  0  ~/test/ansible-wordpress/cleanup.yml
-|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  119  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  58  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  64  6  ~/test/ansible-wordpress/playbook.yml
-|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  1  2  ~/test/ansible-wordpress/playbook.yml
-|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
--'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
-|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
--'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
-|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
--'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
-|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
--'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
-|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
--'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
-|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,1,0,1753762706,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  75  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,75,0,1753762699,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  75  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,75,0,1753762695,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  1  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,1,0,1753762690,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,114,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,40,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,114,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,40,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,40,7,1753762377,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  120  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,120,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  46  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,46,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  120  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,120,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  46  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,46,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  46  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,46,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  117  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,117,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  43  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,43,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  117  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,117,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  43  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,43,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  43  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,43,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  111  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,111,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  37  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,37,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  111  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,111,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  37  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,37,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  37  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,37,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  37  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,37,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  43  11  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,43,11,1753761662,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  40  11  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,40,11,1753761662,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  116  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,116,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  119  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,119,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  113  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,113,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,42,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  45  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,45,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  39  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,39,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  116  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,116,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  119  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,119,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  113  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,113,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,42,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  45  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,45,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  39  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,39,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,42,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  45  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,45,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  39  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,39,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,42,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,42,6,1753761393,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  37  31  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,37,31,1753761339,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  37  31  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,37,31,1753761339,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  76  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,76,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  76  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,76,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
 
 # History of marks within files (newest to oldest):
+
+> ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+	*	1753762703	0
+	"	1	0
+	^	75	0
+	.	74	48
+	+	142	0
+	+	85	0
+	+	92	0
+	+	76	18
+	+	116	0
+	+	116	8
+	+	116	0
+	+	116	105
+	+	116	29
+	+	116	11
+	+	116	0
+	+	111	103
+	+	111	0
+	+	111	68
+	+	115	0
+	+	111	32
+	+	115	0
+	+	113	98
+	+	113	0
+	+	114	0
+	+	1	19
+	+	74	48
+
+> ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
+	*	1753760973	0
+	"	5	33
+	^	5	30
+	.	5	32
+	+	5	32
+
+> ~/test-ansible/ansible-wordpress/templates/wordpress.conf.j2
+	*	1753760864	0
+	"	1	0
+
+> ~/test-ansible/ansible-wordpress/webPlaybook.yml
+	*	1753760768	0
+	"	10	25
+	^	10	26
+	.	10	25
+	+	20	0
+	+	27	0
+	+	16	22
+	+	7	0
+	+	2	19
+	+	12	0
+	+	14	0
+	+	10	25
+
+> ~/test-ansible/ansible-wordpress/cleanup.yml
+	*	1753760259	0
+	"	2	11
+	^	2	12
+	.	2	11
+	+	2	11
+
+> ~/test-ansible/ansible-wordpress/hosts
+	*	1753760248	0
+	"	12	9
+	^	12	10
+	.	12	9
+	+	3	0
+	+	4	2
+	+	5	30
+	+	12	9
+
+> ~/test-ansible/ansible-wordpress/servers.yml
+	*	1753760042	0
+	"	3	21
+	^	3	22
+	.	3	21
+	+	2	32
+	+	3	21
+
+> ~/test-ansible/ansible-wordpress/playbook.yml
+	*	1753759305	0
+	"	2	16
+
+> ~/test-ansible/ansible-wordpress/requirements.yml
+	*	1753759269	0
+	"	1	0
 
 > ~/toPlaybook/userANDfile.yml
 	*	1753758374	0

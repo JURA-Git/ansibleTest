@@ -1,0 +1,75 @@
+- hosts: db_servers
+  become: true
+  vars:
+    db_root_password: "P@ssw0rd"
+    db_name: "wordpress"
+    db_user: "wordpress_user"
+    db_password: "P@ssw0rd"
+
+  tasks:
+
+    # 1. MariaDB 설치
+    - name: Install required packages
+      apt:
+        name:
+          - mariadb-server
+          - python3-mysqldb
+        state: present
+        update_cache: yes
+
+    # 2. Bootstrap 설정 (권한 우회)
+    - name: Stop MariaDB to enter bootstrap mode
+      service:
+        name: mariadb
+        state: stopped
+
+    - name: Create bootstrap config to disable grant tables
+      copy:
+        content: |
+          [mysqld]
+          skip-grant-tables
+        dest: /etc/mysql/mariadb.conf.d/99-bootstrap.cnf
+
+    - name: Start MariaDB in bootstrap mode
+      service:
+        name: mariadb
+        state: started
+
+    # 3. 비밀번호는 이 단계에서 설정하지 않음 ❌ (skip-grant-tables로 인해 불가)
+
+    # 4. Bootstrap 설정 제거 및 재시작
+    - name: Remove bootstrap config file
+      file:
+        path: /etc/mysql/mariadb.conf.d/99-bootstrap.cnf
+        state: absent
+
+    - name: Restart MariaDB in normal mode
+      service:
+        name: mariadb
+        state: restarted
+
+    # 5. root 비밀번호 설정 (정상 모드에서)
+    - name: Set root password
+      command: >
+        mysql -u root -e "
+        ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';
+        FLUSH PRIVILEGES;"
+      changed_when: true
+
+    # 6. DB 및 사용자 생성
+    - name: Create the wordpress database
+      community.mysql.mysql_db:
+        name: "{{ db_name }}"
+        state: present
+        login_user: root
+        login_password: "{{ db_root_password }}"
+
+    - name: Create the wordpress database user
+      community.mysql.mysql_user:
+        name: "{{ db_user }}"
+        password: "{{ db_password }}"
+        priv: "{{ db_name }}.*:ALL"
+        state: present
+        login_user: root
+        login_password: "{{ db_root_password }}"
+

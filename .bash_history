@@ -1,116 +1,3 @@
-ls
-ls -al
-sudo -i
-ls
-hostname
-ls
-usermod --help
-clear
-whoami
-uname
-host
-host -a
-name
-hostname
-hostname --help
-ip add
-sudo -i
-cat /etc/hosts
-whoami
-clear
-hostname
-sudo -i
-sl
-ls
-cd .ssh/
-ls
-clear
-ls
-cat authorized_keys 
-clear
-ls
-cat authorized_keys
-cd ..
-clera
-clear
-sudo -i
-ls
-cd .ssh/
-ls
-ssh -i id_rsa jura_m@10.10.8.5
-echo 'jura_m ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/90-ubuntu
-sudo apt install ssh
-echo 'jura_m ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/90-ubuntu
-cat /etc/sudoers.d/
-
-cd /etc/sudoers.d/
-cat 90-ubuntu 
-reboot
-sudo reboot
-clear
-ls
-clear
-apt search ansible
-apt list ansible
-cat /etc/lsb-release
-uname
-uname -a
-apt install ansible
-sudo apt install ansible
-ansible --version
-ls
-mkdir ansibleLab
-cd ansibleLab/
-touch ansible.cfg hosts
-touch update_hosts.yml
-ls
-ansible-config --help
-ls
-vi ansible.cfg
-ls
-vi ansible.cfg 
-ansible --help
-ls
-vi hosts 
-cat hosts 
-vi hosts 
-ansible all -m ping
-ls
-cat /etc/hosts
-ls
-vi update_hosts.yml 
-ansible-playbook update_hosts.yml
-ansible all -m command -a 'cat /etc/hosts'
-ansible node2 -m command -a 'cat /etc/hosts'
-ainsible node1 -m shell -a 'ls /etc/hosts'
-ansible  -m shell -a 'ls /etc/hosts'
-ansible all -m shell -a 'ls /etc/hosts'
-ansible all -m shell -a 'mkdir ~/temp'
-ansible all -m shell -a 'ls -ld ~/temp'
-ansible all -m shell -a 'rm -rf ~/temp'
-ansible all -m shell -a 'ls -ld ~/temp'
-ls
-cat update_hosts.yml 
-ls
-vi update_hosts.yml 
-ls
-vi playbook_test.yml
-ansible-playbook playbook_test.yml 
-vi playbook_test.yml
-ansible-playbook playbook_test.yml 
-vi playbook_test.yml
-ansible-playbook playbook_test.yml 
-vi playbook_test.yml
-ansible-playbook playbook_test.yml 
-vi playbook_test.yml
-ansible-playbook playbook_test.yml 
-ls
-rm playbook_test.yml 
-ls
-vi installApach.yml
-ansible-playbook installApach.yml 
-vi installApach.yml
-ansible-playbook installApach.yml 
 ansible node1 -m shell "systemctl status apache2"
 ansible node1 -m shell 'systemctl status apache2'
 ansible node1 -m shell 'sudo systemctl status apache2'
@@ -1330,3 +1217,784 @@ vi named.conf.options.j2
 ls
 vi named.conf.local.j2 
 ls
+cd ansible-jinja2-dns-HA/
+ls
+cd templates/
+ls
+cat jura.com.db.j2 
+ls
+cat named.conf.
+vi named.conf.local.j2 
+ls
+cd ..
+ls
+cd vars/
+ls
+cat local.yml 
+cd ..
+ls
+ansible-playbook dns-config.yml 
+cat dns-config.yml 
+ls
+cd templates/
+ls
+cat named.conf.local.j2 
+vi named.conf.local.j2 
+ls
+cd ..
+ansible-playbook dns-config.yml 
+ls
+vi dns-config.yml 
+cd templates/
+ls
+vi named.conf.local.j2 
+cd ..
+ls
+ansible-playbook dns-config.yml 
+ls
+cd templates/
+ls
+cat named.conf.local.j2 
+q!
+ls
+cd ..
+ls
+cd templates/
+ls
+vi jura.com.db.j2 
+cat jura.com.db.j2 
+ls
+cd /var/
+ls
+cd
+cd ansible-jinja2-dns-HA/
+ls
+cd templates/
+ls
+cd ..
+cd vars/
+ls
+vi local.yml 
+vi common.yml
+vi local.yml 
+ls
+cd ..
+cd templates/
+vi named.conf.local.j2 
+cd ../vars/
+ls
+mv common.yml commons.yml 
+ls
+vi commons.yml 
+cd ..
+ls
+vi dns-config.yml 
+ls
+cd vars/
+ls
+cd ..
+ansible-playbook dns-config.yml 
+ls
+cat vars/local.yml 
+vi dns-config.yml 
+ansible-playbook dns-config.yml 
+cat vars/local.yml 
+cat vars/commons.yml 
+cd templates/
+ls
+vi named.conf.local.j2 
+cd ..
+cat vars/commons.yml 
+cat dns-config.yml 
+vi vars/commons.yml 
+ansible-playbook dns-config.yml 
+ls
+cd vars/
+cat ../templates/jura.com.db.j2 
+ls
+cd ..
+ls
+cd vars/
+ls
+vi commons.yml 
+ls
+cat local.yml 
+cd ..
+ls
+cd templates/
+ls
+cd ..
+ls
+cd vars/
+ls
+vi local.yml 
+ls
+vi commons.yml 
+ls
+cd ..
+ls
+cd templates/
+ls
+vi named.conf.options.j2 
+ls
+cd ..
+ls
+vi vars/commons.yml 
+ls
+cd templates/
+ls
+vi named.conf.options.j2 
+vi named.conf.local.j2 
+ls
+cd ..
+ls
+mkdir unattended_upgrades
+cd unattended_upgrades/
+vi hosts
+cat<<EOF>>inventory.ini
+an-node1 ansible_host=10.10.8.4
+EOF
+
+mkdir unattended_upgrades
+cd unattended_upgrades
+mkdir roles
+ls
+cd ..
+ls
+rm -rf unattended_upgrades/
+ls
+mkdir roles
+cat hosts 
+ls
+ansible-galaxy init unattended_upgrades --init-path ./roles
+ls
+cd roles/
+ls
+cd unattended_upgrades/
+ls
+ls -al
+cd ..
+ls
+cd ..
+ls -al
+ls
+cd roles/
+roles/unattended_upgrades/templates/20auto-upgrades.j2
+cd ..
+touch roles/unattended_upgrades/templates/20auto-upgrades.j2
+ls
+touch roles/unattended_upgrades/templates/50unattended-upgrades.j2
+ls
+cd roles/
+vi main.yml
+ls
+cd unattended_upgrades/
+ls
+cd templates/
+ls
+vi 50unattended-upgrades.j2 
+vi 20auto-upgrades.j2 
+ls
+cd ..
+cd tasks/
+ls
+vi main.yml 
+ls
+cd ..
+ls
+vi site.yml
+ls
+cd ..
+ls
+mv main.yml unattended_upgrades/
+ls
+cd main.yml
+ls
+cd unattended_upgrades/
+ls
+ansible-playbook site.yml -i inventory.ini
+ansible-playbook site.yml -i hosts
+ansible-playbook site.yml -i ../../hosts
+ls
+mv ~/unattended_upgrades/roles/unattended_upgrades/site.yml ~/unattended_upgrades/
+ansible-playbook site.yml -i ../../hosts
+ls
+cd ..
+ls
+cd ..
+ls
+ansible-playbook site.yml -i ../../hosts
+ansible-playbook site.yml -i hosts
+cd
+ls
+mkdir new_infra_project
+cd new_infra_project
+cat<<EOF>>inventory.ini
+an-node2 ansible_host=10.10.8.5
+EOF
+
+ls
+cat << EOF > site.yml
+---
+- name: Configure Web Servers
+  hosts: an-node2
+  become: true
+  roles:
+    - role: unattended_upgrades
+      vars:
+        unattended_mail_to: "web-admins@example.com"
+        unattended_reboot_time: "04:00"
+
+- name: Configure Database Servers
+  hosts: an-node2
+  become: true
+  roles:
+    - role: unattended_upgrades
+      vars:
+        unattended_mail_to: "db-admins@example.com"
+        unattended_reboot_time: "02:00"
+EOF
+
+cat site.yml 
+cat<< EOF > ansible.cfg
+[defaults]
+inventory = ./inventory.ini
+# 이전에 롤을 만들었던 디렉터리를 roles_path에 추가
+roles_path = ../unattended_upgrades/roles
+EOF
+
+cat ansible.cfg 
+ls
+cat site.yml 
+ls
+cat inventory.ini 
+cat ansible.cfg 
+vi inventory.ini 
+vi site.yml 
+ansible-playbook site.yml
+ansible-playbook site.yml -i inventory.ini
+ls
+cat inventory.ini 
+vi site.yml 
+ansible-playbook site.yml -i inventory.ini
+ls
+cat ansible.cfg 
+ls
+cat site.yml 
+ls
+cat ansible.cfg 
+ls
+cat site.yml 
+ls
+cd ..
+ls
+cd unattended_upgrades/
+ls
+cd roles/
+ls
+cd unattended_upgrades/
+ls
+cat main.yml 
+cd 
+ls
+cd new_infra_project/
+ls
+ansible-playbook  site.yml -i inventory.ini 
+ls
+tree -L 3 ../unattended_upgrades/
+tree -L ../unattended_upgrades/
+tree 
+apt install tree
+sudo apt install tree
+ls
+tree
+tree -L 3 ../unattended_upgrades/
+cd ../unattended_upgrades/
+ls
+cd roles/
+history
+ls
+cd unattended_upgrades/
+cd ..
+cd .
+cd ..
+tree -L 3 roles/
+cd ..
+mkdir test
+cd test
+ls
+mkdir ansible-jinja2
+cd ansible-jinja2/
+ls
+vi site.yml
+mkdir templates
+cd templates/
+cat << EOF > index.html.j2
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ header }}</h1>
+    <p>{{ message }}</p>
+    <ul>
+    {% for item in items %}
+        <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
+EOF
+
+ls
+vi inventory.ini
+ls
+mv inventory.ini ../
+cd ..
+ls
+vi site.yml 
+ls
+ansible-playbook -i inventory.ini site.yml 
+ls
+vi inventory.ini 
+ls
+vi site.yml 
+ls
+ansible-playbook -i inventory.ini site.yml 
+ls
+cat templates/
+cd templates/
+cat index.html.j2 
+cd ..
+ls
+cat site.yml 
+ansible -m shell -a 'curl http://webswervers'
+ansible -m shell -a 'curl http://webservers'
+ansible -m shell -a 'curl http://node1'
+ls
+vi inventory.ini 
+ansible -m shell -a 'curl http://node1'
+clear
+ansible -m shell -a 'curl http://node1'
+ansible webservers -m shell -a 'curl http://node1'
+ansible node1 -m shell -a 'curl http://node1'
+ansible webservers -m shell -a 'curl http://node1'
+cat inventory.ini 
+ls
+vi inventory.ini 
+ansible webservers -m shell -a 'curl http://node1'
+ansible no[Bde1 -m shell -a 'curl http://node1'
+ansible webservers -i inventory.ini -m shell -a 'curl http://localhost'
+cd ..
+ls
+mkdir ansible-wordpress
+ls
+cd ansible-wordpress/
+ls
+outch ansible.cfg hosts requirements.yml playbook.yml
+toutch ansible.cfg hosts requirements.yml playbook.yml
+touch ansible.cfg hosts requirements.yml playbook.yml
+ls
+mkdir templates
+touch templates/wordpress.conf.j2 templates/wp-config.php.j2
+cat << EOF > ansible.cfg 
+[defaults]
+inventory=./hosts
+remote_user=jura_m
+host_key_checking=false
+
+[privillege_escalation]
+become=true
+become_method=sudo
+become_user=root
+become_ask_pass=false
+EOF
+
+cat ansible.cfg 
+vi ansible.cfg [H
+vi ansible.cfg 
+ls
+cat hosts 
+cat << EOF > hosts
+[web_servers]
+an-node1 ansible_host=10.10.8.4
+
+[control_node]
+an-master ansible_host=10.10.8.3 ansible_connection=local
+
+[all:children]
+web_servers
+control_node
+
+[all:vars]
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+EOF
+
+ls
+cd templates/
+ls
+cd ..
+ls
+cat <<EOF> requirements.yml
+---
+roles:
+
+ls
+vi requirements.yml 
+ls
+vi playbook.yml 
+ls
+ansible-playbook --syntax-check playbook.yml 
+ls
+cd templates/
+ls
+vi wp-config.php.j2 
+vi wordpress.conf.j2 
+ls
+cd ..
+sl
+ls
+cat ansible.cfg 
+ls
+cat hosts 
+ls
+cat playbook.yml 
+ls
+ansible-galaxy install -r requirements.yml 
+cat requirements.yml 
+ansible-playbook -i hosts playbook.yml
+ls
+vi playbook.yml 
+ls
+vi cleanup.yml
+cat cleanup.yml
+wq!
+ls
+ansible-playbook --syntax-check cleanup.yml 
+ansible-playbook -i hosts cleanup.yml
+ls
+ansible-playbook -i hosts playbook.yml 
+ansible-playbook -i hosts cleanup.yml
+ls
+cd ..
+ls
+cd ..
+ls
+cd test
+ls
+cd ansible-
+cd ansible-wordpress/
+ls
+cat ansible.cfg 
+cat hosts
+ls
+vi ansible.cfg 
+cd ..
+cd ansible-wordpress/
+cat ansible.cfg
+cat hosts 
+cat playbook.yml 
+ls
+cd ..
+ls
+cd ..
+ls
+cat ansible
+cat ansible.cfg 
+ls
+cd test
+ls
+cd ansible-wordpress/
+ls
+cp hosts ../../
+ls
+vi hosts 
+cd
+ls
+ls -al
+cd ..
+ls
+cd jura_m/
+ls
+git add .
+git commit -m "second push commit"
+git push origin main
+ls
+cd test
+ls
+cd ..
+cd toPlaybook/
+ls
+cat userANDfile.yml 
+ls
+cd ..
+ls
+mv new_infra_project/ test/
+mv unattended_upgrades/ test
+cd test
+ls
+cd ..
+ls
+mv ansible-dictionary/ test
+mv ansible-jinja2-dns-HA/ jura-ansible-dnsHA
+ls
+mv userAndFile/ jura-ansible-userADD
+ls
+cd jura-ansible-
+ls
+cd jura-ansible-userADD/
+ls
+cd ..
+ls
+cd ansible-LAB/
+ls
+cd ..
+ls
+mv ansible-LAB/ test
+ls
+cd toPlaybook/
+ls
+cd ..
+cd jura-ansible-
+cd jura-ansible-userADD/
+ls
+cat userANDfile.yml 
+cd ..
+ls
+cd toPlaybook/
+cat userANDfile.yml
+ls
+cd ..
+ls
+cd jura-ansible-userADD/
+ls
+cat ansible.cfg 
+cat hosts 
+cd ..
+ls
+cd toPlaybook/
+ls
+cat userANDfile.yml 
+vi userANDfile.yml 
+ls
+cd ..
+ls
+rm -rf jura-ansible-userADD/
+mv toPlaybook/ jura-ansible-useradd
+ls
+cd ansible-nginx
+ls
+cat playbook.yml 
+s
+ls
+cd ..
+ls
+mv ansible-nginx test
+cd ansible-nginx-pjt/
+ls
+cat site.yml
+cat common-hardening.yml 
+d ..
+cd ..
+ls
+mv ansible-nginx-pjt/ test
+cd test
+ls
+cd ansible-LAB
+ls
+cat installApach.yml 
+ls
+mv installApach.yml ../
+cat update_hosts.yml 
+ls
+cd ..
+ls
+mv installApach.yml ..
+ls
+cd ..
+ls
+mv installApach.yml jura-ansible-useradd/
+ls
+cd test
+cd ..
+ls
+mv jura-ansible-useradd/ jura-ansible-etc
+ls
+cd test/
+ls
+cd ..
+ls
+git .
+git add .
+git common -m "third push commit"
+git commit -m "third push commit"
+git push origin main 
+ls
+mv test-ansible
+mv test test-ansible
+ls
+git add test-ansible/
+git commit -m "directory name change commit"
+git push origin main 
+ls
+cd test-ansible/
+ls
+cd ..
+git rm test
+ls
+git rm -r test
+ls
+git commmit -m "remove test directory commit"
+git commit -m "remove test directory commit"
+git push origin main 
+cd test-ansible/
+ls
+cd ansible-jinja2/
+ls
+cd ..
+cd ansible-wordpress/
+ls
+vi hosts
+ls
+cat playbook.yml 
+ls
+vi requirements.yml 
+ls
+vi playbook.yml 
+cp playbook.yml playbookDb.yml 
+mv playbook.yml playbookWeb.yml 
+ls
+mv playbookWeb.yml webPlaybook.yml
+ls
+mv playbookDb.yml dbPlaybook.yml 
+ls
+vi webPlaybook.yml 
+vi dbPlaybook.yml 
+cat dbPlaybook.yml 
+ls
+vi servers.yml
+ls
+cat webPlaybook.yml 
+ls
+cat hosts 
+ls
+vi webPlaybook.yml 
+vi dbPlaybook.yml 
+ls
+cd templates/
+ls
+vi wp-config.php.j2 
+ls
+cat wordpress.conf.j2 
+ls
+cd ..
+ls
+vi hosts 
+ls
+vi cleanup.yml 
+ls
+ansible-playbook --syntax-check requirements.yml 
+ls
+ansible-playbook --syntax-check requirements.yml 
+ansible-playbook --syntax-check dbPlaybook.yml 
+ansible-playbook --syntax-check webPlaybook.yml 
+vi webPlaybook.yml 
+cat requirements.yml 
+ls
+cd ..
+ls
+cd ansible-wordpress/
+ls
+ls -al
+cd templates/
+ls
+ls -al
+cd ..
+cd
+ls -al
+cd .ansible/
+ls
+cd roles/
+ls
+ls -al
+cd
+ls
+cd test-ansible/
+cd ansible-wordpress/
+ls
+cat webPlaybook.yml 
+ls
+cd templates/
+ls
+cat wordpress.conf.j2 
+ls
+vi wp-config.php.j2 
+ls
+cd ..
+ls
+cat requirements.yml 
+ls
+cat webPlaybook.yml 
+vi webPlaybook.yml 
+ls
+cd templates/
+ls
+vi wp-config.php.j2 
+ls
+vi wordpress.conf.j2 
+cd ..
+ls
+cat hosts
+ls
+cd templates/
+ls
+vi wp-config.php.j2 
+cd ..
+ls
+cd ansible-wordpress/
+ls
+cat servers.yml 
+ansible-playbook -i hosts servers.yml 
+ls
+cd ..
+cd ansible-wordpress/
+cat dbPlaybook.yml 
+ls
+cat servers.yml 
+ls
+vi dbPlaybook.yml 
+ls
+ansible-playbook cleanup.yml 
+ls
+ansible-playbook servers.yml
+ls
+ansible-playbook cleanup.yml 
+ls
+cat dbPlaybook.yml 
+ls
+vi dbPlaybook.yml
+ansible-playbook servers.yml
+vi dbPlaybook.yml
+ls
+ansible-playbook -i hosts cleanup.yml 
+ansible-playbook -i hosts servers.yml 
+ls
+cd templates/
+ls
+cd ..
+ls
+cat dbPlaybook.yml 
+ls
+ansible-playbook -i hosts cleanup.yml 
+ls
+vi dbPlaybook.yml 
+cat dbPlaybook.yml 
+vi dbPlaybook.yml 
+ansible-playbook -i hosts servers.yml 
+ls
+mv dbPlaybook.yml dbPlaybook.yml.or
+vi dbPlaybook.yml
+ls
+ansible-playbook -i hosts cleanup.yml
+ansible-playbook -i hosts servers.yml 
