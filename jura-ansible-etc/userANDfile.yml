@@ -39,5 +39,5 @@
       - /tmp/ansible
       - /home/jura_m
   tasks:
-    -name: file
+    -name:
 
