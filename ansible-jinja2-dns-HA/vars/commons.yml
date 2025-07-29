@@ -1,0 +1,7 @@
+common:
+  name: jura.com
+  ip:
+    all: 10.10.8.0/24 
+    master: 10.10.8.4
+    slave: 10.10.8.5
+    

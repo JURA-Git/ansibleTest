@@ -427,4 +427,906 @@ ansible node1 -m shell -a "cat /etc/shadow"
 ssh jura1@10.10.8.3
 ssh jura1@10.10.8.4
 vi userANDfile.yml 
-   
+   cat /etc/passwd
+ls
+cd toPlaybook/
+ls
+cat hosts 
+ls
+cd ..
+ls
+mkdir userAndFile
+ls
+cd userAndFile/
+ls
+cd. .
+cd ..
+ls
+cd top
+sl
+ls
+cd toPlaybook/
+ls
+cp hosts ../userAndFile/
+cp ansible.cfg ../userAndFile/
+ls
+cd
+cd userAndFile/
+ls
+cd ..
+ls
+cd toPlaybook/
+ls
+cp userANDfile.yml ../userAndFile/
+ls
+vi hosts 
+ls
+cd ..
+ls
+cd toPlaybook/
+ls
+cat ansible.cfg 
+cat hosts 
+ls
+cat userANDfile.yml 
+vi userANDfile.yml 
+ansible node1 -m copy -a "content='kevin ALL=(ALL) NOPASSWD: ALL' dest=/etc/sudoers.d/kevin mode=0644 validate='/usr/sbin/visudo -cf %s'"
+vi userANDfile.yml 
+cat userANDfile.yml 
+ls
+cd ..
+ls
+vi ansibleLab/
+cd ansibleLab/
+ls
+vi fact.yml 
+for i in (4...7);do ping 10.10.8.${i} ;done
+for i in (4..7);do ping 10.10.8.${i} ;done
+for i in {4..7};do ping 10.10.8.${i} ;done
+for i in {4..7};do ssh[B 10.10.8.${i} ;done
+vi when_test.yml
+ansible-playbook when_test.yml
+mkdir files
+cd files/
+touch index.html
+cat<<EOF>index.html
+<H1> Hello Mr. John </H1>
+EOF
+
+vi user
+mv user user.yml
+vi pb.yml
+ls
+vi pb.yml
+ls
+cd ..
+ls
+cat ansible.cfg 
+ls
+cat hosts 
+cd ..
+ls
+cd ansibleLab/
+ls
+vi hosts 
+cd files/
+ls
+vi pb.yml 
+ls
+ansible all -m shell -a 'cat /etc/lsb-release'
+ansible all -m shell -a ''
+ansible all -m shell -a 'ls'
+ls
+cd ..
+sl
+vi hosts 
+ansible all -m shell -a 'ls'
+ansible all -m shell -a ''
+ansible all -m shell -a 'cat /etc/lsb-realese'
+ERROR! No argument passed to shell module
+jura_m@server:~/ansibleLab$ ansible all -m shell -a 'cat /etc/lsb-realese'
+server | FAILED | rc=1 >>
+cat: /etc/lsb-realese: No such file or directorynon-zero return code
+node1 | FAILED | rc=1 >>
+cat: /etc/lsb-realese: No such file or directorynon-zero return code
+node3 | FAILED | rc=1 >>
+cat: /etc/lsb-realese: No such file or directorynon-zero return code
+node2 | FAILED | rc=1 >>
+cat: /etc/lsb-realese: No such file or directorynon-zero return code
+node4 | FAILED | rc=1 >>
+cat: /etc/lsb-realese: No such file or directorynon-zero return code
+ansible all -m shell -a "echo hello"
+jura_m@server:~/ansibleLab$ ansible all -m shell -a '/etc/lsb-realese'
+ansible all -m shell -a '/etc/lsb-realese'
+ansible all -m shell -a 'cat /etc/lsb-realese'
+ansible all -m shell -a 'cat /etc/lsb-release'
+ls
+cd files/
+ls
+vi pb.yml 
+ansible-playbook --syntax-check pb.yml 
+ansible-playbook --syntax-check pb.yml -i hosts
+ls
+ansible-playbook --syntax-check pb.yml -i ../hosts
+ansible-playbook pb.yml
+ansible-playbook -i inventory.ini pb.yml
+ansible-playbook -i ../hosts  pb.yml
+ls
+vi pb.yml
+ansible-playbook -i ../hosts  pb.yml
+ls
+ansible all -m shell -a 'cat /var/www/html/test1.txtx'
+vi pb.yml
+ansible all -m shell -a 'cat /var/www/html/test01.txt'
+ansible node1 -m shell -a 'cat /var/www/html/test01.txt'
+cd ..
+ansible node1 -m shell -a 'cat /var/www/html/test01.txt'
+ansible node1 -m shell -a 'cat /var/www/html/test02.txt'
+ansible node1 -m shell -a 'ls /var/www/html/test02.txt'
+ansibl node1 -m ansible.builtin.setup | egrep dist
+ansibl node1 -m ansible.builtin.setup | egrep destri
+ansibl node1 -m ansible.builtin.setup | egrep dest
+ansible an-node1 -m ansible.builtin.setup | egrep ansible_distribution
+ansible node1 -m ansible.builtin.setup | egrep ansible_distribution
+ansible node1 -m ansible.builtin.setup > builtin.setup.json
+ls
+cat builtin.setup.json 
+ls
+cd files/
+cd ..
+ls
+cd files/
+ls
+cat user.yml 
+ls
+cat user.yml 
+ls
+vi pb.yml 
+ls
+vi pb.yml 
+ls
+ansible-p
+ansible-playbook pb.yml 
+ansible-playbook pb.yml -i ../hosts
+vi pb.yml 
+ls
+mkdir ansible-nginx-project
+cd
+mkdir ans-nginx-pjt
+cd ans-nginx-pjt/
+vi hosts
+cat<<EOF>common-hardening.yml
+---
+- name: Apply common hardening to all servers
+  hosts: all
+  become: true
+  tasks:
+    - name: Install UFW firewall
+      ansible.builtin.apt:
+        name: ufw
+        state: present
+
+    - name: Allow SSH traffic
+      community.general.ufw:
+        rule: allow
+        name: OpenSSH
+
+    - name: Allow HTTP traffic on webservers only
+      community.general.ufw:
+        rule: allow
+        name: Nginx Full # 'nginx' 대신 더 일반적인 'Nginx Full' 프로필 사용
+      when: inventory_hostname in groups['webservers'] # 이 조건을 추가
+
+    - name: Enable UFW
+      community.general.ufw:
+        state: enabled
+EOF
+
+ls
+vi common-hardening.yml 
+cat<<EOF>web-deploy.yml
+---
+- name: Deploy Nginx web server
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Start and enable nginx service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+EOF
+
+ls
+cd ..
+ls
+cd ansibleLab/
+ls
+cp ansible.cfg ../ans-nginx-pjt/
+cd ..
+cd ans-nginx-pjt/
+ls
+cat<<EOF>site.yml
+---
+- import_playbook: common-hardening.yml
+- import_playbook: web-deploy.yml
+EOF
+
+ls
+cat ansible.cfg 
+vi hosts 
+ls
+vi site.yml 
+ls
+ansible-playbook -i ansible.cfg site.yml 
+ls
+cat vi common-hardening.yml 
+common-hardening.yml 
+ls
+vi site.yml 
+vi web-deploy.yml 
+ls
+cat hosts 
+ls
+vi ansible.cfg 
+ls
+vi hosts
+vi ansible.cfg 
+ansible webservers -m ping
+ansible webservers -m command -a "whoami" -b
+ls
+ansible-playbook --syntax-checkn site.yml 
+ansible-playbook --syntax-check site.yml 
+ansible-playbook --syntax-check 
+ls
+ansible-playbook --syntax-check common-hardening.yml 
+ansible-playbook --syntax-check web-deploy.yml 
+ansible-playbook site.yml 
+ls
+vi common-hardening.yml 
+ls
+vi hosts 
+ansible-config ansible.cfg 
+ls
+ansible-playbook site.yml 
+vi common-hardening.yml 
+ls
+cat web-deploy.yml 
+ls
+vi common-hardening.yml 
+ansible all -m shell -a 'ufw status numbered'
+ls
+vi common-hardening.yml 
+vi web-deploy.yml 
+cd ..
+ls
+cd ans-nginx-pjt/
+ls
+cd ..
+cd ansible-nginx/
+ls
+cat playbook.yml 
+cd ..
+ls
+cd ans-nginx-pjt/
+ls
+cd ..
+cd ansibleLab/
+ls
+cd files/
+ls
+cat pb.yml 
+q!
+cd ..
+ls
+cd ..
+ls
+cd ans-nginx-pjt/
+ls
+vi web-deploy.yml 
+ls
+ansible-playbook --syntax-check web-deploy.yml 
+vi web-deploy.yml 
+ansible-playbook --syntax-check web-deploy.yml 
+vi web-deploy.yml 
+ansible-playbook --syntax-check web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+ls
+cat site.yml 
+vi web-deploy.yml 
+ansible-playbook site.yml 
+vi web-deploy.yml 
+cp web-deploy.yml web-deploy-task.yml
+ls
+cat site
+cat site.yml 
+vi site.yml 
+ansible-playbook -i hosts
+ansible-playbook -i hosts web-deploy-task.yml 
+ls
+vi web-deploy-task.yml 
+ansible-playbook site.yml
+vi web-deploy-task.yml 
+ansible-playbook site.yml
+vi web-deploy-task.yml 
+ansible-playbook site.yml
+ls
+vi site.yml 
+ls
+cat web-deploy-task.yml 
+ls
+vi site.yml 
+ls
+cp web-deploy.yml web-dstroy.yml [A
+vi web-deploy.yml
+ansible-playbook site.yml
+vi site.yml 
+ansible-playbook site.yml
+ls
+vi hosts 
+vi site.yml 
+ansible-playbook site.yml
+vi site.yml 
+ls
+vi web-deploy-task.yml 
+ansible-playbook site.yml
+vi web-deploy-task.yml 
+ansible-playbook site.yml
+vi web-deploy-task.yml 
+ansible-playbook site.yml
+ls
+cp site.yml site.yml.ori
+vi web-dstroy.yml 
+ls
+vi web-dstroy.yml 
+ls
+vi hosts 
+ansible-playbook web-dstroy.yml
+ls
+ansible-inventory --list -i hosts
+ansible all -i hosts -m ping
+ls
+ansible-playbook -i hosts web-dstroy.yml 
+ansible-playbook -i ansible.cfg web-dstroy.yml 
+ls
+vi ansible.cfg 
+ansible-inventory --list
+ansible webservers -m ping
+ls
+ansibleansible-inventory --graph
+ansible-inventory --graph
+ansible-inventory -i hosts --list
+cat hosts 
+ls
+vi hosts 
+ansible-inventory --graph
+ansible-playbook -i hosts web-dstroy.yml 
+ls
+vi
+ls
+cat site.yml.ori 
+cd ..
+ls
+git init
+ls
+ls -al
+cd .git
+ls
+cd ..
+git .
+ls
+git branch
+git config --global user.name jura
+git config --global user.email hegs3@naver.com
+git get-url
+ls
+git config --global credential.helper cache
+git config --global --add safe.directory ./
+git config 
+git list
+git config all
+git config get-all
+git remote add origin https://github.com/JURA-Git/ansibleTest.git
+git add .
+git commit -m "first commit"
+ls
+cd ansible-dictionary/
+ls
+cat playbook.yml 
+cd ..
+ls
+cd ansible-dictionary/
+ls
+cat firewall.yml 
+cd ..
+ls
+cd ansible--di
+cd ansible-dictionary/
+ls
+cat collection.yml 
+ls
+cat firewall.yml 
+ls
+cat playbook.yml 
+ls
+cat environment.yml 
+systemctl status -named
+ls
+cat firewall.yml 
+cd ..
+ls
+cd ansible-dictionary/
+ls
+cat environment.yml 
+cat placeholder.yml 
+cat playbook.yml 
+ls
+cat playbook.yml 
+ls
+cat environment.yml 
+cd ..
+ls
+cd ansible-nginx
+ls
+cat playbook.yml 
+ls
+cd ..
+ls
+cd ansible-jinja2-dns-HA/
+ls
+cd vars/
+cd ..
+cd templates/
+ls
+vi named.conf.local.j2 
+ls
+cd vars
+cd ..
+cd vars/
+ls
+vi local.yml 
+ls
+git list
+ls
+ls -al
+ls
+git remote 
+git config list
+sudo git config list
+git status
+git branch 
+git remove -v
+history
+git remote add origin https://github.com/JURA-Git/ansibleTest.git
+git push origin master 
+ls
+git branch -help
+git branch -u master main
+git branch -d master main
+git branch -m master main
+git branch 
+git push origin main
+ls
+mkdir ansible-dictionary
+cd ansible-dictionary/
+vi hosts
+vi playbook.yml
+rm playbook.yml 
+cat<<EOF>playbook.yml 
+---
+# 메인 마스터 playbook 파일
+- name: Configure web server on Ubuntu 24.04
+  hosts: node1
+  become: true
+
+  # --- 모든 변수를 이 곳에서 중앙 관리 ---
+  vars:
+    # Environment
+    package_name: apache2
+    service_name: apache2
+
+    # Firewall
+    firewall_rules:
+      - { rule: 'allow', port: '22', proto: 'tcp' }
+      - { rule: 'allow', port: '80', proto: 'tcp' }
+
+    # Placeholder
+    target_file: /var/www/html/index.html
+
+    # Test
+    test_url: "http://{{ inventory_hostname }}"
+
+  tasks:
+    - name: Import the environment tasks
+      import_tasks: environment.yml
+
+    - name: Import the firewall tasks
+      import_tasks: firewall.yml
+
+    - name: Import the placeholder tasks
+      import_tasks: placeholder.yml
+
+# 모든 작업 수행 후, 제대로 작동하는지 테스트하는 playbook 파일 삽입
+- import_playbook: test.yml
+  vars:
+    url: "{{ test_url }}"
+
+EOF
+
+cat<<EOF>environment.yml
+---
+- name: Install the {{ package_name }} package
+  ansible.builtin.apt:
+    name: "{{ package_name }}"
+    state: latest
+    update_cache: yes
+      
+- name: Start and enable the {{ service_name }} service
+  ansible.builtin.service:
+    name: "{{ service_name }}"
+    enabled: true
+    state: started
+EOF
+
+cat<<EOF>placeholder.yml
+---
+- name: Create placeholder file
+  ansible.builtin.copy:
+    content: "{{ inventory_hostname }} has been customized using Ansible.\n"
+    dest: "{{ target_file }}"
+EOF
+
+cat<<EOF>firewall.yml
+---
+- name: Install UFW firewall
+  ansible.builtin.apt:
+    name: ufw
+    state: present
+
+- name: Enable UFW
+  community.general.ufw:
+    state: enabled
+
+- name: Apply firewall rules from list
+  community.general.ufw:
+    rule: "{{ item.rule }}"
+    port: "{{ item.port }}"
+    proto: "{{ item.proto }}"
+  loop: "{{ firewall_rules }}"
+EOF
+
+cat<<EOF>test.yml
+---
+- name: Test web service connectivity
+  hosts: node1
+  become: false
+
+  tasks:
+    - name: Connect to the web server from the control node
+      ansible.builtin.uri:
+        url: "http://{{ inventory_hostname }}"
+        status_code: 200
+      delegate_to: localhost
+EOF
+
+ls
+vi playbook.yml 
+vi firewall.yml 
+cat playbook.yml 
+cat firewall.yml 
+ls
+ansible-playbook playbook.yml
+ansible-playbook playbook.yml -i hosts 
+ls
+vi playbook.yml 
+vi test.yml 
+ansible webservers -a 'ufw status'
+
+ansible webservers -a 'ufw status' -i hosts
+ansible node1 -a 'ufw status' -i ansible webservers -a "sudo ufw status" -i inventory.ini
+ansible webservers -a "sudo ufw status" -i inventory.ini
+cd ..
+ls
+ccd ansible-dictionary/
+cd ansible-dictionary/
+ls
+ansible webservers -a "sudo ufw status" -i ../ansibleLab/ansible.cfg
+ls
+cd
+ls
+cd ansibleLab/
+ls
+cp ansible.cfg ../ansible.cfg
+cd ..
+ls
+cp ansible.cfg ansible-dictionary/
+cd ansible-dictionary/
+ls
+ansible webservers -a "sudo ufw status" -i ../ansibleLab/ansible.cfg
+ansible webservers -a "sudo ufw status"
+ls
+cat playbook.yml 
+ls
+cat environment.yml 
+ls
+cp environment.yml cleanup.yml
+vi cleanup.yml 
+cd ..
+ls
+cd ans-nginx-pjt/
+ls
+cat web-dstroy.yml 
+cd ..
+cd ansible-dictionary/
+ls
+vi cleanup.yml 
+ls
+cat cat playbook.yml 
+ls
+ansible-playbook cleanup.yml
+ls
+cat playbook.yml 
+vi playbook.yml 
+ansible-playbook playbook.yml 
+vi playbook.yml 
+ls
+vi playbook.yml 
+ansible-playbook playbook.yml 
+vi playbook.yml 
+ls
+rm cleanup.yml 
+cat<<EOF>cleanup.yml
+---
+- name: Cleanup all
+  hosts: webservers
+  become: true
+  vars:
+    package_name: apache2
+    service_name: apache2
+  tasks:
+    - name: Install the {{ package_name }} package
+      ansible.builtin.apt:
+        name: "{{ package_name }}"
+        state: absent
+
+    - name: Start and enable the {{ service_name }} service
+      ansible.builtin.service:
+        name: "{{ service_name }}"
+        enabled: false
+        state: stopped
+EOF
+
+ls
+ansible-playbook cleanup.yml
+vi collection.yml
+ls
+cd ..
+ls
+mkdir ansible-jinja2-dns-HA
+cd ansibleLab/
+ls
+cat hosts 
+cd ..
+ls
+vi ansible-dictionary/
+mv ans-nginx-pjt ansible-nginx-pjt
+ls
+mv ansibleLab ansible-LAB
+ls
+cp ansible.cfg ansible-jinja2-dns-HA/
+cd ansible-jinja2-dns-HA/
+ls
+vi hosts
+cat ../ansible-LAB/hosts 
+ls
+vi hosts 
+ls
+ca ansible.cfg 
+cat ansible.cfg 
+clear
+ls
+vi setupDNS.yml
+ls
+vi setupDNS.yml 
+ls
+cd ..
+ls
+cd ansible-nginx-pjt/
+ls
+cat web-deploy.yml 
+ls
+cd ..
+ls
+cd ansible-jinja2-dns-HA/
+ls
+vi setupDNS.yml 
+ls
+ansible-playbook --syntax-check setupDNS.yml 
+vi setupDNS.yml 
+ansible-playbook --syntax-check setupDNS.yml 
+vi setupDNS.yml 
+ansible-playbook --syntax-check setupDNS.yml 
+ansible-playbook setupDNS.yml 
+ls
+vi setupDNS.yml 
+ls
+vi firewallUFW.yml
+ls
+cat setupDNS.yml 
+ls
+vi firewallUFW.yml 
+ansible-playbook firewallUFW.yml 
+vi firewallUFW.yml 
+ansible-playbook firewallUFW.yml 
+vi firewallUFW.yml 
+ls
+vi firewallUFW.yml 
+ansible-playbook firewallUFW.yml 
+vi named.conf.options.j2
+ls
+vi named.conf.options.j2
+mkdir templates
+ls
+mv named.conf.options.j2 templates/
+cd templates/
+ls
+vi named.conf.options.j2 
+ls
+cd ..
+ls
+cd templates/
+ls
+vi named.conf.options.j2 
+ls
+mv named.conf.options.j2 named.conf.options
+ls
+cd ..
+ls
+vi firewallUFW.yml 
+ls
+cd templates/
+ls
+cat named.conf.options 
+ls
+mv named.conf.options named.conf.options.js2
+ls
+cd ..
+ls
+vi NamedConfOption.yml
+ls
+cd templates/
+ls
+cd ..
+ls
+mv NamedConfOption.yml namedConfOption.yml 
+ls
+vi namedConfOption.yml
+ls templates/
+mv templates/named.conf.options.js2 templates/named.conf.options.j2 
+ls
+vi namedConfOption.yml 
+ls
+ansible-playbook --syntax-check setupDNS.yml 
+ansible-playbook --syntax-check namedConfOption.yml
+ls
+cd templates/
+ls
+vi named.con.local
+ls
+vi jura.com.db
+ls
+mv named.con.local named.conf.local.j2
+ls
+mv jura.com.db jura.com.db.j2
+ls
+vi jura.com.db.j2
+ls
+cd ..
+ls
+vi namedConfOption.yml
+ls
+vi templates/named.conf.local.j2
+ls
+cd templates/
+ls
+cd ..
+ls
+mkdir vars
+ls
+ansible-playbook namedConfOption.yml 
+ls
+cat namedConfOption.yml 
+ls
+mv namedConfOption.yml dnsConfig.yml
+vi dnsConfig.yml 
+ls
+mv setupDNS.yml dns-setup.yml 
+ls
+mv dnsConfig.yml dns-config.yml
+ls
+mv firewallUFW.yml ufw-fireqll.yml
+mv ufw-fireqll.yml ufw-firewall.yml
+ls
+vi dns-config.yml 
+ls
+vi templates/
+cd templates/
+ls
+vi named.conf.local.j2 
+ls
+cd ..
+ls
+cd vars/
+ls
+vi local.yml
+ls
+cd ..
+cd templates/
+ls
+vi named.conf.local.j2 
+ls
+ansible-playbook named.conf.local.j2 
+clear
+ls
+cd ..
+ls
+cd templates/
+ls
+cd ..
+ls
+ansible-playbook ls
+ls
+vi dns-config.yml 
+ansible-playbook --syntax-check dns-config.yml 
+ansible-playbook  dns-config.yml 
+ls
+cd templates/
+ls
+vi named.conf.local.j2 
+ansible-playbook  dns-config.yml 
+cd ..
+ansible-playbook  dns-config.yml 
+ls
+cat hosts
+cd templates/
+ls
+vi named.conf.local.j2 
+cd ..
+ls
+ansible-playbook dns-config.yml 
+cd templates/
+ls
+vi named.conf.options.j2 
+ls
+vi named.conf.local.j2 
+ls

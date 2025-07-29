@@ -1,0 +1,19 @@
+---
+- name: FireWall setting Allow UFW
+  hosts: all
+  gather_facts: no
+  become: true
+  vars:
+    firewall_rules: 
+      - { rule: 'allow', port: '53', proto: 'tcp'}
+      - { rule: 'allow', port: '53', proto: 'udp'}
+
+  tasks:
+    - name: Apply firewall rules from list
+      community.general.ufw:
+        rule: "{{ item.rule }}"
+        port: "{{ item.port }}"
+        proto: "{{ item.proto }}"
+      loop: "{{ firewall_rules }}"
+
+

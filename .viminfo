@@ -11,49 +11,61 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0/\<ansible_facts\>
+~MSle0~/community.mysql
 
 # Last Substitute Search Pattern:
-~MSle0~&    
+~MSle0&    
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:q!
-|2,0,1753675447,,"q!"
 :wq!
-|2,0,1753675037,,"wq!"
+|2,0,1753757716,,"wq!"
+:q!
+|2,0,1753756582,,"q!"
 :Wq!
-|2,0,1753674612,,"Wq!"
+|2,0,1753753312,,"Wq!"
+:q
+|2,0,1753749368,,"q"
+:w
+|2,0,1753748171,,"w"
+:wq
+|2,0,1753747852,,"wq"
 :%s/    //g
 |2,0,1753673941,,"%s/    //g"
 :q1
 |2,0,1753673142,,"q1"
-:w
-|2,0,1753673138,,"w"
 :q2!
 |2,0,1753669613,,"q2!"
-:wq
-|2,0,1753430407,,"wq"
 :set nu
 |2,0,1753422951,,"set nu"
-:q
-|2,0,1753407001,,"q"
 :ㅈㅂ!
 |2,0,1753347611,,"ㅈㅂ!"
 :ㅈ
 |2,0,1753337025,,"ㅈ"
 
 # Search String History (newest to oldest):
+?/community.mysql
+|2,1,1753756516,47,"community.mysql"
+?/dest
+|2,1,1753755276,47,"dest"
+?/desk:
+|2,1,1753755270,47,"desk:"
+?/handl
+|2,1,1753755175,47,"handl"
+? @$
+|2,1,1753691383,,"@$"
+?/pak
+|2,1,1753685755,47,"pak"
+? \<update_cache\>
+|2,1,1753682215,,"\\<update_cache\\>"
 ?     
 |2,1,1753673941,,"    "
 ? \<ansible_facts\>
 |2,1,1753673095,,"\\<ansible_facts\\>"
 ?/var/
 |2,1,1753666771,47,"var/"
-? @$
-|2,1,1753664970,,"@$"
 ?/mana
 |2,1,1753426338,47,"mana"
 ? \<content\>
@@ -68,264 +80,925 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-	node2 ansible_host=10.10.8.5
-|3,1,0,1,1,0,1753674597,"node2 ansible_host=10.10.8.5"
-"1	LINE	0
-	node3
-	
-|3,0,1,1,2,0,1753674591,"node3",""
+"0	LINE	0
+	    - vars/local.yml
+|3,0,0,1,1,0,1753748809,"    - vars/local.yml"
+""1	LINE	0
+	ubuntu@an-master:~/ansible-wordpress/templates$ cat wordpress.conf.j2
+|3,1,1,1,1,0,1753755440,"ubuntu@an-master:~/ansible-wordpress/templates$ cat wordpress.conf.j2"
 "2	LINE	0
-	node
-|3,0,2,1,1,0,1753674591,"node"
+	node1
+|3,0,2,1,1,0,1753753654,"node1"
 "3	LINE	0
-	---
-|3,0,3,1,1,0,1753673959,"---"
+	[all:children]
+|3,0,3,1,1,0,1753753654,"[all:children]"
 "4	LINE	0
-	  tasks:
-|3,0,4,1,1,0,1753673927,"  tasks:"
+	    - vars/local.yml
+|3,0,4,1,1,0,1753748814,"    - vars/local.yml"
 "5	LINE	0
-	  become: true
-|3,0,5,1,1,0,1753673927,"  become: true"
+	
+|3,0,5,1,1,0,1753748813,""
 "6	LINE	0
-	  hosts: webservers
-|3,0,6,1,1,0,1753673926,"  hosts: webservers"
+	  - name: jura.com
+|3,0,6,1,1,0,1753748650,"  - name: jura.com"
 "7	LINE	0
-	 name: Deploy Nginx web server
-|3,0,7,1,1,0,1753673925," name: Deploy Nginx web server"
+	commons:
+|3,0,7,1,1,0,1753748647,"commons:"
 "8	LINE	0
-	        #        - ansible_facts.packages is defined 
-|3,0,8,1,1,0,1753673125,"        #        - ansible_facts.packages is defined "
+	  - name: jura.com
+|3,0,8,1,1,0,1753748570,"  - name: jura.com"
 "9	LINE	0
-	      - /home/jura_m/
-|3,0,9,1,1,0,1753433106,"      - /home/jura_m/"
+	  - name: jura.com
+|3,0,9,1,1,0,1753748569,"  - name: jura.com"
 "-	CHAR	0
 	 
-|3,0,36,0,1,0,1753674343," "
+|3,0,36,0,1,0,1753692864," "
 
 # File marks:
-'0  5  3  ~/ans-nginx-pjt/hosts
-|4,48,5,3,1753675037,"~/ans-nginx-pjt/hosts"
-'1  12  0  ~/ans-nginx-pjt/ansible.cfg
-|4,49,12,0,1753674891,"~/ans-nginx-pjt/ansible.cfg"
-'2  7  27  ~/ans-nginx-pjt/hosts
-|4,50,7,27,1753674614,"~/ans-nginx-pjt/hosts"
-'3  8  27  ~/ans-nginx-pjt/hosts
-|4,51,8,27,1753674614,"~/ans-nginx-pjt/hosts"
-'4  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,52,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
-'5  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,53,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
-'6  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,54,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
-'7  11  6  ~/ans-nginx-pjt/web-deploy-task.yml
-|4,55,11,6,1753674388,"~/ans-nginx-pjt/web-deploy-task.yml"
-'8  10  3  ~/ans-nginx-pjt/web-deploy-task.yml
-|4,56,10,3,1753674351,"~/ans-nginx-pjt/web-deploy-task.yml"
-'9  10  3  ~/ans-nginx-pjt/web-deploy-task.yml
-|4,57,10,3,1753674351,"~/ans-nginx-pjt/web-deploy-task.yml"
+'0  3  0  ~/test/ansible-wordpress/hosts
+|4,48,3,0,1753757716,"~/test/ansible-wordpress/hosts"
+'1  6  5  ~/test/ansible-wordpress/ansible.cfg
+|4,49,6,5,1753757373,"~/test/ansible-wordpress/ansible.cfg"
+'2  49  19  ~/test/ansible-wordpress/cleanup.yml
+|4,50,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
+'3  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,51,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+'4  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,52,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+'5  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,53,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+'6  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,54,1,2,1753755294,"~/test/ansible-wordpress/playbook.yml"
+'7  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,55,1,2,1753755294,"~/test/ansible-wordpress/playbook.yml"
+'8  1  0  ~/test/ansible-wordpress/playbook.yml
+|4,56,1,0,1753754722,"~/test/ansible-wordpress/playbook.yml"
+'9  1  0  ~/test/ansible-wordpress/playbook.yml
+|4,57,1,0,1753754722,"~/test/ansible-wordpress/playbook.yml"
 
 # Jumplist (newest first):
--'  5  3  ~/ans-nginx-pjt/hosts
-|4,39,5,3,1753675037,"~/ans-nginx-pjt/hosts"
--'  5  3  ~/ans-nginx-pjt/hosts
-|4,39,5,3,1753675037,"~/ans-nginx-pjt/hosts"
--'  7  27  ~/ans-nginx-pjt/hosts
-|4,39,7,27,1753675030,"~/ans-nginx-pjt/hosts"
--'  7  27  ~/ans-nginx-pjt/hosts
-|4,39,7,27,1753675030,"~/ans-nginx-pjt/hosts"
--'  12  0  ~/ans-nginx-pjt/ansible.cfg
-|4,39,12,0,1753674891,"~/ans-nginx-pjt/ansible.cfg"
--'  12  0  ~/ans-nginx-pjt/ansible.cfg
-|4,39,12,0,1753674891,"~/ans-nginx-pjt/ansible.cfg"
--'  12  0  ~/ans-nginx-pjt/ansible.cfg
-|4,39,12,0,1753674891,"~/ans-nginx-pjt/ansible.cfg"
--'  12  0  ~/ans-nginx-pjt/ansible.cfg
-|4,39,12,0,1753674891,"~/ans-nginx-pjt/ansible.cfg"
--'  7  0  ~/ans-nginx-pjt/ansible.cfg
-|4,39,7,0,1753674873,"~/ans-nginx-pjt/ansible.cfg"
--'  7  0  ~/ans-nginx-pjt/ansible.cfg
-|4,39,7,0,1753674873,"~/ans-nginx-pjt/ansible.cfg"
--'  7  0  ~/ans-nginx-pjt/ansible.cfg
-|4,39,7,0,1753674873,"~/ans-nginx-pjt/ansible.cfg"
--'  7  0  ~/ans-nginx-pjt/ansible.cfg
-|4,39,7,0,1753674873,"~/ans-nginx-pjt/ansible.cfg"
--'  8  27  ~/ans-nginx-pjt/hosts
-|4,39,8,27,1753674614,"~/ans-nginx-pjt/hosts"
--'  8  27  ~/ans-nginx-pjt/hosts
-|4,39,8,27,1753674614,"~/ans-nginx-pjt/hosts"
--'  8  27  ~/ans-nginx-pjt/hosts
-|4,39,8,27,1753674614,"~/ans-nginx-pjt/hosts"
--'  8  27  ~/ans-nginx-pjt/hosts
-|4,39,8,27,1753674614,"~/ans-nginx-pjt/hosts"
--'  10  8  ~/ans-nginx-pjt/hosts
-|4,39,10,8,1753674564,"~/ans-nginx-pjt/hosts"
--'  11  8  ~/ans-nginx-pjt/hosts
-|4,39,11,8,1753674564,"~/ans-nginx-pjt/hosts"
--'  11  8  ~/ans-nginx-pjt/hosts
-|4,39,11,8,1753674564,"~/ans-nginx-pjt/hosts"
--'  10  8  ~/ans-nginx-pjt/hosts
-|4,39,10,8,1753674564,"~/ans-nginx-pjt/hosts"
--'  11  8  ~/ans-nginx-pjt/hosts
-|4,39,11,8,1753674564,"~/ans-nginx-pjt/hosts"
--'  11  8  ~/ans-nginx-pjt/hosts
-|4,39,11,8,1753674564,"~/ans-nginx-pjt/hosts"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  3  11  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,3,11,1753674543,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674534,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  28  19  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,28,19,1753674480,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
--'  1  0  ~/ans-nginx-pjt/web-dstroy.yml
-|4,39,1,0,1753674447,"~/ans-nginx-pjt/web-dstroy.yml"
+-'  3  0  ~/test/ansible-wordpress/hosts
+|4,39,3,0,1753757716,"~/test/ansible-wordpress/hosts"
+-'  1  0  ~/test/ansible-wordpress/hosts
+|4,39,1,0,1753757689,"~/test/ansible-wordpress/hosts"
+-'  6  5  ~/test/ansible-wordpress/ansible.cfg
+|4,39,6,5,1753757373,"~/test/ansible-wordpress/ansible.cfg"
+-'  6  5  ~/test/ansible-wordpress/ansible.cfg
+|4,39,6,5,1753757373,"~/test/ansible-wordpress/ansible.cfg"
+-'  10  17  ~/test/ansible-wordpress/ansible.cfg
+|4,39,10,17,1753757330,"~/test/ansible-wordpress/ansible.cfg"
+-'  10  17  ~/test/ansible-wordpress/ansible.cfg
+|4,39,10,17,1753757330,"~/test/ansible-wordpress/ansible.cfg"
+-'  49  19  ~/test/ansible-wordpress/cleanup.yml
+|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
+-'  49  19  ~/test/ansible-wordpress/cleanup.yml
+|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
+-'  49  19  ~/test/ansible-wordpress/cleanup.yml
+|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
+-'  49  19  ~/test/ansible-wordpress/cleanup.yml
+|4,39,49,19,1753756747,"~/test/ansible-wordpress/cleanup.yml"
+-'  1  0  ~/test/ansible-wordpress/cleanup.yml
+|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
+-'  1  0  ~/test/ansible-wordpress/cleanup.yml
+|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
+-'  1  0  ~/test/ansible-wordpress/cleanup.yml
+|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
+-'  1  0  ~/test/ansible-wordpress/cleanup.yml
+|4,39,1,0,1753756593,"~/test/ansible-wordpress/cleanup.yml"
+-'  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+-'  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+-'  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+-'  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+-'  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+-'  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+-'  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+-'  119  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,119,6,1753756582,"~/test/ansible-wordpress/playbook.yml"
+-'  58  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
+-'  58  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
+-'  58  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
+-'  58  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
+-'  58  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
+-'  58  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
+-'  58  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
+-'  58  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,58,6,1753756523,"~/test/ansible-wordpress/playbook.yml"
+-'  64  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
+-'  64  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
+-'  64  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
+-'  64  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
+-'  64  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
+-'  64  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
+-'  64  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
+-'  64  6  ~/test/ansible-wordpress/playbook.yml
+|4,39,64,6,1753756522,"~/test/ansible-wordpress/playbook.yml"
+-'  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
+-'  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
+-'  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
+-'  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
+-'  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
+-'  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
+-'  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
+-'  1  2  ~/test/ansible-wordpress/playbook.yml
+|4,39,1,2,1753756516,"~/test/ansible-wordpress/playbook.yml"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  16  1  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,16,1,1753755467,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  1  0  ~/test/ansible-wordpress/templates/wordpress.conf.j2
+|4,39,1,0,1753755409,"~/test/ansible-wordpress/templates/wordpress.conf.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
+-'  10  0  ~/test/ansible-wordpress/templates/wp-config.php.j2
+|4,39,10,0,1753755403,"~/test/ansible-wordpress/templates/wp-config.php.j2"
 
 # History of marks within files (newest to oldest):
+
+> ~/test/ansible-wordpress/hosts
+	*	1753757715	0
+	"	3	0
+	^	3	0
+	.	4	0
+	+	3	12
+	+	4	0
+
+> ~/test/ansible-wordpress/ansible.cfg
+	*	1753757372	0
+	"	6	5
+	^	6	6
+	.	6	6
+	+	2	11
+	+	3	13
+	+	4	19
+	+	7	8
+	+	8	15
+	+	9	13
+	+	10	17
+	+	6	6
+
+> ~/test/ansible-wordpress/cleanup.yml
+	*	1753756746	0
+	"	49	19
+	^	49	20
+	.	50	0
+	+	1	0
+	+	49	12
+	+	4	0
+	+	3	1
+	+	4	1
+	+	5	1
+	+	6	3
+	+	7	3
+	+	8	3
+	+	8	13
+	+	8	2
+	+	9	0
+	+	10	5
+	+	11	7
+	+	12	7
+	+	13	7
+	+	14	5
+	+	15	7
+	+	16	7
+	+	17	7
+	+	18	5
+	+	20	3
+	+	21	5
+	+	22	7
+	+	23	7
+	+	24	5
+	+	25	7
+	+	26	7
+	+	26	53
+	+	28	3
+	+	27	3
+	+	28	5
+	+	19	0
+	+	29	7
+	+	30	7
+	+	31	3
+	+	32	5
+	+	33	7
+	+	34	9
+	+	35	10
+	+	36	9
+	+	37	9
+	+	38	9
+	+	39	9
+	+	40	7
+	+	41	7
+	+	42	7
+	+	43	3
+	+	44	5
+	+	45	7
+	+	46	7
+	+	47	6
+	+	48	7
+	+	49	20
+	+	50	0
+
+> ~/test/ansible-wordpress/playbook.yml
+	*	1753756582	0
+	"	119	6
+	^	1	3
+	.	85	0
+	+	44	74
+	+	45	24
+	+	46	0
+	+	47	3
+	+	48	5
+	+	49	7
+	+	50	7
+	+	51	3
+	+	52	5
+	+	53	7
+	+	54	24
+	+	55	0
+	+	56	3
+	+	57	3
+	+	58	5
+	+	59	7
+	+	60	7
+	+	61	7
+	+	62	7
+	+	63	3
+	+	64	5
+	+	65	7
+	+	66	7
+	+	67	7
+	+	68	7
+	+	69	7
+	+	70	7
+	+	72	3
+	+	71	0
+	+	73	3
+	+	74	5
+	+	75	7
+	+	76	7
+	+	77	20
+	+	78	0
+	+	79	3
+	+	80	3
+	+	81	5
+	+	82	7
+	+	83	7
+	+	84	7
+	+	86	3
+	+	87	5
+	+	88	7
+	+	89	7
+	+	90	7
+	+	91	7
+	+	92	7
+	+	94	3
+	+	95	5
+	+	96	7
+	+	97	7
+	+	98	7
+	+	99	7
+	+	100	20
+	+	101	0
+	+	102	3
+	+	103	3
+	+	104	6
+	+	105	7
+	+	106	7
+	+	107	7
+	+	108	7
+	+	109	7
+	+	110	7
+	+	112	3
+	+	113	3
+	+	114	6
+	+	115	7
+	+	116	7
+	+	117	7
+	+	119	3
+	+	120	5
+	+	121	7
+	+	122	7
+	+	123	7
+	+	124	7
+	+	126	3
+	+	111	0
+	+	128	1
+	+	127	6
+	+	128	5
+	+	129	7
+	+	130	7
+	+	132	7
+	+	133	5
+	+	132	1
+	+	133	3
+	+	134	5
+	+	135	7
+	+	137	0
+	+	130	0
+	+	124	0
+	+	131	0
+	+	125	0
+	+	118	0
+	+	117	5
+	+	93	0
+	+	84	31
+	+	85	0
+
+> ~/test/ansible-wordpress/templates/wordpress.conf.j2
+	*	1753755466	0
+	"	16	1
+	^	16	2
+	.	16	1
+	+	18	1
+	+	16	0
+	+	16	23
+	+	17	0
+	+	1	0
+	+	2	0
+	+	3	0
+	+	5	0
+	+	6	0
+	+	7	0
+	+	8	1
+	+	9	0
+	+	10	0
+	+	11	1
+	+	12	1
+	+	13	1
+	+	14	1
+	+	15	1
+	+	16	1
+
+> ~/test/ansible-wordpress/templates/wp-config.php.j2
+	*	1753755398	0
+	"	10	0
+	^	10	0
+	.	8	0
+	+	18	40
+	+	14	0
+	+	18	0
+	+	12	0
+	+	10	0
+	+	8	0
+
+> ~/test/ansible-wordpress/requirements.yml
+	*	1753754675	0
+	"	7	0
+	^	7	0
+	.	7	0
+	+	7	0
+
+> ~/test/ansible-jinja2/inventory.ini
+	*	1753753654	0
+	"	3	0
+	.	4	0
+	+	1	10
+	+	4	14
+	+	4	0
+
+> ~/test/ansible-jinja2/site.yml
+	*	1753753325	0
+	"	3	18
+	^	3	19
+	.	3	18
+	+	58	20
+	+	3	18
+
+> ~/test/ansible-jinja2/templates/inventory.ini
+	*	1753753211	0
+	"	1	27
+	^	1	28
+	.	1	27
+	+	1	27
+
+> ~/new_infra_project/site.yml
+	*	1753751518	0
+	"	12	8
+	^	12	9
+	.	12	9
+	+	3	9
+	+	12	9
+
+> ~/new_infra_project/inventory.ini
+	*	1753751448	0
+	"	1	0
+	^	1	0
+	.	1	0
+	+	1	0
+
+> ~/unattended_upgrades/roles/unattended_upgrades/site.yml
+	*	1753751021	0
+	"	11	70
+	^	11	73
+	.	11	70
+	+	11	70
+
+> ~/unattended_upgrades/roles/unattended_upgrades/tasks/main.yml
+	*	1753750991	0
+	"	3	0
+	^	3	0
+	.	3	0
+	+	23	15
+	+	3	0
+
+> ~/unattended_upgrades/roles/unattended_upgrades/templates/20auto-upgrades.j2
+	*	1753750934	0
+	"	3	37
+	^	3	38
+	.	3	37
+	+	3	37
+
+> ~/unattended_upgrades/roles/unattended_upgrades/templates/50unattended-upgrades.j2
+	*	1753750923	0
+	"	11	72
+	^	11	73
+	.	11	72
+	+	11	72
+
+> ~/unattended_upgrades/roles/main.yml
+	*	1753750851	0
+	"	4	30
+	^	4	31
+	.	4	30
+	+	4	30
+
+> ~/unattended_upgrades/hosts
+	*	1753750547	0
+	"	1	27
+	^	1	28
+	.	1	27
+	+	1	27
+
+> ~/ansible-jinja2-dns-HA/templates/named.conf.local.j2
+	*	1753749670	0
+	"	19	28
+	^	19	29
+	.	19	28
+	+	23	0
+	+	1	0
+	+	6	13
+	+	8	0
+	+	6	0
+	+	8	13
+	+	7	10
+	+	22	8
+	+	8	23
+	+	21	1
+	+	22	0
+	+	20	12
+	+	10	20
+	+	11	20
+	+	10	19
+	+	11	24
+	+	20	12
+	+	12	9
+	+	20	8
+	+	21	0
+	+	12	0
+	+	12	26
+	+	19	27
+	+	12	28
+	+	12	31
+	+	13	24
+	+	14	11
+	+	19	18
+	+	13	8
+	+	6	0
+	+	19	8
+	+	13	24
+	+	19	20
+	+	12	48
+	+	19	0
+	+	19	50
+	+	12	1
+	+	12	0
+	+	12	26
+	+	19	1
+	+	19	0
+	+	12	1
+	+	15	12
+	+	19	0
+	+	16	0
+	+	12	0
+	+	7	0
+	+	22	0
+	+	9	0
+	+	12	0
+	+	16	0
+	+	17	0
+	+	10	14
+	+	11	15
+	+	17	14
+	+	7	0
+	+	22	0
+	+	7	0
+	+	22	0
+	+	8	13
+	+	10	13
+	+	11	14
+	+	17	13
+	+	18	16
+	+	7	2
+	+	22	1
+	+	8	15
+	+	10	0
+	+	2	16
+	+	13	32
+	+	19	28
+
+> ~/ansible-jinja2-dns-HA/templates/named.conf.options.j2
+	*	1753749615	0
+	"	7	40
+	^	7	41
+	.	7	41
+	+	6	12
+	+	9	19
+	+	7	41
+
+> ~/ansible-jinja2-dns-HA/vars/commons.yml
+	*	1753749506	0
+	"	6	3
+	^	6	4
+	.	6	3
+	+	1	6
+	+	7	0
+	+	2	16
+	+	3	20
+	+	3	33
+	+	3	17
+	+	5	33
+	+	3	3
+	+	3	28
+	+	4	27
+	+	4	22
+	+	4	0
+	+	5	3
+	+	6	3
+
+> ~/ansible-jinja2-dns-HA/vars/local.yml
+	*	1753749282	0
+	"	4	0
+	^	4	3
+	.	1	0
+	+	4	21
+	+	4	3
+	+	4	23
+	+	6	22
+	+	4	0
+	+	6	0
+	+	1	8
+	+	1	17
+	+	2	0
+	+	4	2
+	+	2	3
+	+	4	3
+	+	1	0
+
+> ~/ansible-jinja2-dns-HA/dns-config.yml
+	*	1753748915	0
+	"	7	17
+	^	7	18
+	.	7	17
+	+	17	4
+	+	2	46
+	+	19	42
+	+	23	18
+	+	20	39
+	+	7	20
+	+	8	0
+	+	7	17
+
+> ~/ansible-jinja2-dns-HA/vars/common.yml
+	*	1753748642	0
+	"	2	4
+	^	2	5
+	.	2	4
+	+	3	0
+	+	2	4
+
+> ~/ansible-jinja2-dns-HA/templates/jura.com.db.j2
+	*	1753748441	0
+	"	11	16
+	^	12	18
+	.	13	0
+	+	11	4
+	+	9	27
+	+	11	20
+	+	10	17
+	+	12	17
+	+	13	0
+
+> ~/ansible-jinja2-dns-HA/dnsConfig.yml
+	*	1753691146	0
+	"	1	0
+
+> ~/ansible-jinja2-dns-HA/namedConfOption.yml
+	*	1753690323	0
+	"	2	16
+	^	2	17
+	.	15	0
+	+	10	44
+	+	13	0
+	+	12	13
+	+	13	18
+	+	12	18
+	+	14	18
+	+	15	0
+
+> ~/ansible-jinja2-dns-HA/templates/jura.com.db
+	*	1753690061	0
+	"	10	8
+	^	10	9
+	.	10	8
+	+	9	34
+	+	2	48
+	+	2	50
+	+	3	21
+	+	9	31
+	+	11	0
+	+	10	8
+
+> ~/ansible-jinja2-dns-HA/templates/named.con.local
+	*	1753689873	0
+	"	8	23
+	^	8	24
+	.	8	23
+	+	1	13
+	+	3	1
+	+	3	2
+	+	4	17
+	+	5	0
+	+	9	12
+	+	6	30
+	+	7	29
+	+	8	15
+	+	9	12
+	+	10	0
+	+	8	23
+
+> ~/ansible-jinja2-dns-HA/NamedConfOption.yml
+	*	1753689252	0
+	"	2	29
+	^	2	30
+	.	2	29
+	+	2	29
+
+> ~/ansible-jinja2-dns-HA/firewallUFW.yml
+	*	1753689002	0
+	"	9	41
+	^	9	42
+	.	9	41
+	+	20	0
+	+	5	14
+	+	2	33
+	+	17	30
+	+	10	0
+	+	7	21
+	+	8	50
+	+	9	0
+	+	8	47
+	+	9	44
+	+	11	7
+	+	12	3
+	+	13	3
+	+	14	3
+	+	15	3
+	+	16	3
+	+	17	3
+	+	8	41
+	+	9	41
+
+> ~/ansible-jinja2-dns-HA/named.conf.options.j2
+	*	1753687675	0
+	"	8	31
+	^	11	0
+	.	10	2
+	+	20	2
+	+	17	30
+	+	18	28
+	+	19	0
+	+	15	0
+	+	14	0
+	+	10	2
+
+> ~/ansible-jinja2-dns-HA/setupDNS.yml
+	*	1753685972	0
+	"	29	27
+	^	29	28
+	.	30	0
+	+	3	12
+	+	5	14
+	+	17	8
+	+	21	21
+	+	22	24
+	+	15	0
+	+	8	13
+	+	9	19
+	+	10	16
+	+	21	0
+	+	20	23
+	+	11	10
+	+	23	13
+	+	13	11
+	+	23	0
+	+	20	28
+	+	6	5
+	+	23	36
+	+	26	11
+	+	14	10
+	+	23	0
+	+	26	24
+	+	12	11
+	+	26	30
+	+	28	18
+	+	20	20
+	+	7	6
+	+	26	21
+	+	29	23
+	+	18	28
+	+	29	60
+	+	30	0
+
+> ~/ansible-jinja2-dns-HA/hosts
+	*	1753684051	0
+	"	8	2
+	^	8	3
+	.	8	2
+	+	1	9
+	+	2	28
+	+	3	0
+	+	1	4
+	+	3	5
+	+	4	28
+	+	6	14
+	+	8	2
+
+> ~/ansible-dictionary/collection.yml
+	*	1753683055	0
+	"	19	0
+	^	1	0
+	.	95	29
+	+	95	29
+
+> ~/ansible-dictionary/playbook.yml
+	*	1753682439	0
+	"	34	0
+	.	34	0
+	+	40	3
+	+	39	0
+	+	34	3
+	+	34	10
+	+	34	30
+	+	33	0
+	+	34	0
+
+> ~/ansible-dictionary/cleanup.yml
+	*	1753682218	0
+	"	6	6
+	^	6	7
+	.	6	0
+	+	5	16
+	+	6	0
+
+> ~/ansible-dictionary/test.yml
+	*	1753681840	0
+	"	1	0
+
+> ~/ansible-dictionary/firewall.yml
+	*	1753681508	0
+	"	1	0
+
+> ~/ansible-dictionary/hosts
+	*	1753681321	0
+	"	9	8
+	^	9	9
+	.	9	8
+	+	9	8
 
 > ~/ans-nginx-pjt/hosts
 	*	1753675036	0

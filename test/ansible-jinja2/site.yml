@@ -1,0 +1,59 @@
+---
+- name: Install Nginx
+  hosts: webservers
+  become: true
+  vars:
+    packages:
+      - nginx
+
+  tasks:
+  - name: Gather facts about installed packages
+    ansible.builtin.package_facts:
+      manager: auto
+
+  - name: Purge Apache2 if it is installed
+    ansible.builtin.apt:
+      name: apache2
+      state: absent
+      purge: yes       # 설정 파일까지 모두 삭제
+      autoremove: yes  # 의존성 패키지 자동 삭제
+    when: "'apache2' in ansible_facts.packages"
+
+  - name: Purge Nginx if it is installed (for a clean slate)
+    ansible.builtin.apt:
+      name: nginx
+      state: absent
+      purge: yes
+      autoremove: yes
+    when: "'nginx' in ansible_facts.packages"
+
+  - name: lastest Nginx
+    ansible.builtin.apt:
+      name: "{{ packages }}"
+      state: present
+    when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "24.04"
+
+  - name: lastest Nginx
+    ansible.builtin.yum:
+      name: "{{ packages }}"
+      state: present
+    when: ansible_distribution  == "Redhat" and ansible_distribution_version == "CentOS"
+
+- name: Create default.html from Jinja2 template
+  hosts: webservers
+  become: true
+  vars:
+    title: "Welcome to My Website"
+    header: "Hello, World!"
+    message: "This is a sample HTML file generated using Jinja2."
+    items:
+      - "Item 1"
+      - "Item 2"
+      - "Item 3"
+  tasks:
+    - name: Create index.html from template
+      ansible.builtin.template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+        mode: '0644'
+

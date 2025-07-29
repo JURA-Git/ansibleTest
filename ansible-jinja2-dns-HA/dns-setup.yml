@@ -1,0 +1,29 @@
+---
+- name: Setup DNS
+  hosts: all
+  gather_facts: no
+  become: true
+  vars:
+    packages:
+      - bind9
+      - bind9-utils
+      - bind9-doc
+      - ufw
+    services:
+      - named
+      - ufw
+
+
+  tasks:
+    - name: Install DNS & UFW
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+
+    - name: Start AND Enable service
+      ansible.builtin.service:
+        name: "{{ item }}"
+        stated: started
+        enable: yes
+      loop: "{{ services }}"

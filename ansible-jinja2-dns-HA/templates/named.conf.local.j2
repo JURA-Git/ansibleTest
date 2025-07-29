@@ -1,0 +1,22 @@
+acl "trusted"{
+	{{ common.ip.all }};
+};
+
+
+
+{# {% for zone in zones[0]  %} #}
+zone "{{ common.name }}"{
+	{% if 'pri' in group_names %}
+	type {{ zones[0].type }};
+	file "{{ zones[0].file }}";
+	allow-transfer { trusted; };
+	also-notify { {{ common.ip.slave }}; };
+	notify yes;
+	
+	{% elif 'slv' in group_names %}
+	type {{ zones[1].type }};
+	file "{{ zones[1].file }}";
+	masters { {{common.ip.master}}; };
+	{% endif %}
+};
+{# {% endfor %} #}

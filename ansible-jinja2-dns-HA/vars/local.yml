@@ -1,0 +1,5 @@
+zones:
+  - type: master
+    file: /etc/bind/jura.com.db
+  - type: slave
+    file: /var/cache/bind/jura.com.db
