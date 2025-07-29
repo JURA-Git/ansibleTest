@@ -4,3 +4,4 @@
 - import_playbook: tasks/dns-config-pri.yml 
 
 - import_playbook: tasks/ufw-firewall.yml
+- import_playbook: tasks/named-restart.yml

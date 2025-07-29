@@ -20,14 +20,18 @@
 $
 
 # Command Line History (newest to oldest):
-:q!
-|2,0,1753762706,,"q!"
 :wq!
-|2,0,1753762694,,"wq!"
+|2,0,1753776574,,"wq!"
+:!
+|2,0,1753776270,,"!"
+:Wq!
+|2,0,1753775984,,"Wq!"
+:q!
+|2,0,1753774948,,"q!"
+:'<,'>w
+|2,0,1753769394,,"'<,'>w"
 :w
 |2,0,1753760813,,"w"
-:Wq!
-|2,0,1753760042,,"Wq!"
 :q
 |2,0,1753749368,,"q"
 :wq
@@ -46,6 +50,12 @@ $
 |2,0,1753337025,,"ㅈ"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1753774859,,"@$"
+?/sl
+|2,1,1753773279,47,"sl"
+?/common
+|2,1,1753773033,47,"common"
 ?/Re
 |2,1,1753761971,47,"Re"
 ?/ALTER USER
@@ -68,8 +78,6 @@ $
 |2,1,1753755270,47,"desk:"
 ?/handl
 |2,1,1753755175,47,"handl"
-? @$
-|2,1,1753691383,,"@$"
 ?/pak
 |2,1,1753685755,47,"pak"
 ? \<update_cache\>
@@ -95,264 +103,495 @@ $
 
 # Registers:
 "0	LINE	0
-	- import_playbook: dbPlaybook.yml
-|3,0,0,1,1,0,1753760035,"- import_playbook: dbPlaybook.yml"
-""1	LINE	0
-	        "mysql -u root -e \"FLUSH PRIVILEGES; ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';\""
-|3,1,1,1,1,0,1753762353,"        \"mysql -u root -e \\\"FLUSH PRIVILEGES; ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';\\\"\""
+	      - { rule: 'allow', port: '53', proto: 'udp'}
+|3,0,0,1,1,0,1753775528,"      - { rule: 'allow', port: '53', proto: 'udp'}"
+"1	LINE	0
+	
+|3,0,1,1,1,0,1753776484,""
 "2	LINE	0
-	changed_when: true
-|3,0,2,1,1,0,1753761775,"changed_when: true"
+	
+|3,0,2,1,1,0,1753776483,""
 "3	LINE	0
-	      ansible.builtin.command: >
-|3,0,3,1,1,0,1753761769,"      ansible.builtin.command: >"
+	    - ../vars/commons.yml
+|3,0,3,1,1,0,1753776482,"    - ../vars/commons.yml"
 "4	LINE	0
-	            FLUSH PRIVILEGES;"
-|3,0,4,1,1,0,1753761767,"            FLUSH PRIVILEGES;\""
+	  vars_files:
+|3,0,4,1,1,0,1753776482,"  vars_files:"
 "5	LINE	0
-	            ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';
-|3,0,5,1,1,0,1753761762,"            ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';"
+	      - { rule: 'allow', port: '53', proto: 'udp'}
+|3,0,5,1,1,0,1753775573,"      - { rule: 'allow', port: '53', proto: 'udp'}"
 "6	LINE	0
-	            ddmysql -u root -e "
-|3,0,6,1,1,0,1753761762,"            ddmysql -u root -e \""
+	        listen-on-v4 { any; };
+|3,0,6,1,1,0,1753774503,"        listen-on-v4 { any; };"
 "7	LINE	0
-	           mysql -u root -e "
-|3,0,7,1,1,0,1753761635,"           mysql -u root -e \""
+	      loop: "{{ services }}"
+|3,0,7,1,1,0,1753772119,"      loop: \"{{ services }}\""
 "8	LINE	0
-	            FLUSH PRIVILEGES;"
-|3,0,8,1,1,0,1753761634,"            FLUSH PRIVILEGES;\""
+	      - bind9
+|3,0,8,1,1,0,1753772092,"      - bind9"
 "9	LINE	0
-	            ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';
-|3,0,9,1,1,0,1753761632,"            ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ db_root_password }}';"
-"-	CHAR	0
-	 
-|3,0,36,0,1,0,1753692864," "
+	    services:
+|3,0,9,1,1,0,1753772091,"    services:"
+""-	CHAR	0
+	:
+|3,1,36,0,1,0,1753776514,":"
 
 # File marks:
-'0  1  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,48,1,0,1753762706,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'1  75  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,49,75,0,1753762695,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'2  75  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,50,75,0,1753762695,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'3  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,51,114,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'4  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,52,40,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'5  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,53,114,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'6  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,54,40,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'7  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,55,114,7,1753762377,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'8  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,56,40,7,1753762377,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
-'9  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,57,114,7,1753762377,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
+'0  7  24  ~/jura-ansible-dnsHA/summary.yml
+|4,48,7,24,1753776574,"~/jura-ansible-dnsHA/summary.yml"
+'1  9  6  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,49,9,6,1753776536,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'2  13  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,50,13,23,1753776423,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'3  17  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,51,17,23,1753776423,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'4  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,52,7,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'5  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,53,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'6  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,54,7,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'7  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,55,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'8  10  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,56,10,12,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'9  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,57,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
 
 # Jumplist (newest first):
--'  1  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,1,0,1753762706,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  75  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,75,0,1753762699,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  75  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,75,0,1753762695,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  1  0  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,1,0,1753762690,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,114,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,40,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  114  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,114,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,40,7,1753762429,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  40  7  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,40,7,1753762377,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  120  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,120,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  46  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,46,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  120  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,120,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  46  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,46,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  46  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,46,55,1753762343,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  117  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,117,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  43  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,43,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  117  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,117,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  43  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,43,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  43  55  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,43,55,1753761972,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  111  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,111,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  37  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,37,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  111  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,111,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  37  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,37,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  37  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,37,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  37  79  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,37,79,1753761859,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  43  11  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,43,11,1753761662,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  40  11  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,40,11,1753761662,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  116  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,116,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  119  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,119,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  113  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,113,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,42,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  45  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,45,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  39  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,39,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  116  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,116,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  119  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,119,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  113  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,113,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,42,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  45  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,45,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  39  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,39,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,42,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  45  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,45,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  39  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,39,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,42,6,1753761616,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  42  6  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,42,6,1753761393,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  37  31  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,37,31,1753761339,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  37  31  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,37,31,1753761339,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  76  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,76,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  76  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,76,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  2  18  ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-|4,39,2,18,1753761303,"~/test-ansible/ansible-wordpress/dbPlaybook.yml"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
--'  5  33  ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
-|4,39,5,33,1753760975,"~/test-ansible/ansible-wordpress/templates/wp-config.php.j2"
+-'  7  24  ~/jura-ansible-dnsHA/summary.yml
+|4,39,7,24,1753776574,"~/jura-ansible-dnsHA/summary.yml"
+-'  6  16  ~/jura-ansible-dnsHA/summary.yml
+|4,39,6,16,1753776551,"~/jura-ansible-dnsHA/summary.yml"
+-'  9  6  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,9,6,1753776536,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  9  6  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,9,6,1753776536,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  13  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,13,23,1753776479,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  13  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,13,23,1753776479,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  17  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,17,23,1753776423,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  17  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,17,23,1753776423,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,7,13,1753776358,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,7,13,1753776358,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,7,13,1753776358,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,7,13,1753776358,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  10  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,10,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  14  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,14,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  13  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,13,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  10  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,10,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  14  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,14,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  13  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,13,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  7  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,7,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  7  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,7,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,5,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  9  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,9,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  6  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,6,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  8  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,8,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,5,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,5,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  9  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,9,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  6  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,6,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  8  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,8,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,5,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,5,7,1753775985,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,5,7,1753775985,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
+|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
 
 # History of marks within files (newest to oldest):
+
+> ~/jura-ansible-dnsHA/summary.yml
+	*	1753776573	0
+	"	7	24
+	^	7	25
+	.	7	24
+	+	2	31
+	+	3	0
+	+	4	0
+	+	3	36
+	+	4	32
+	+	2	24
+	+	3	24
+	+	4	44
+	+	6	41
+	+	7	24
+
+> ~/jura-ansible-dnsHA/tasks/named-restart.yml
+	*	1753776535	0
+	"	9	6
+	^	6	7
+	.	6	6
+	+	2	57
+	+	14	0
+	+	10	15
+	+	8	13
+	+	8	24
+	+	10	12
+	+	8	25
+	+	8	2
+	+	9	8
+	+	10	11
+	+	10	32
+	+	2	40
+	+	13	23
+	+	12	13
+	+	8	0
+	+	7	17
+	+	12	17
+	+	7	10
+	+	12	23
+	+	5	13
+	+	12	28
+	+	8	0
+	+	7	17
+	+	6	6
+
+> ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
+	*	1753775574	0
+	"	11	0
+	^	10	48
+	.	11	0
+	+	18	34
+	+	21	21
+	+	10	0
+	+	11	0
+	+	10	47
+	+	11	0
+
+> ~/jura-ansible-dnsHA/tasks/dns-setup.yml
+	*	1753774948	0
+	"	24	35
+	^	28	15
+	.	28	14
+	+	27	13
+	+	28	14
+
+> ~/jura-ansible-dnsHA/templates/named.conf.options.j2
+	*	1753774506	0
+	"	9	8
+	.	9	0
+	+	9	0
+
+> ~/jura-ansible-dnsHA/templates/jura.com.db.j2
+	*	1753773344	0
+	"	12	24
+	^	12	25
+	.	12	24
+	+	9	36
+	+	10	9
+	+	10	18
+	+	10	17
+	+	16	0
+	+	10	0
+	+	15	0
+	+	12	0
+	+	10	0
+	+	12	18
+	+	13	0
+	+	14	27
+	+	13	26
+	+	12	13
+	+	13	26
+	+	12	25
+	+	10	24
+	+	9	40
+	+	2	52
+	+	10	25
+	+	9	30
+	+	10	14
+	+	2	38
+	+	3	21
+	+	4	24
+	+	5	24
+	+	7	24
+	+	3	33
+	+	4	35
+	+	5	35
+	+	6	35
+	+	7	35
+	+	10	30
+	+	12	24
+
+> ~/jura-ansible-dnsHA/vars/commons.yml
+	*	1753773299	0
+	"	1	0
+
+> ~/jura-ansible-dnsHA/tasks/dns-config-pri.yml
+	*	1753773279	0
+	"	9	42
+	^	9	43
+	.	9	42
+	+	7	8
+	+	11	15
+	+	9	42
+
+> ~/jura-ansible-dnsHA/tasks/dns-config-all.yml
+	*	1753773250	0
+	"	10	49
+	^	10	50
+	.	10	49
+	+	12	25
+	+	19	15
+	+	7	8
+	+	8	8
+	+	17	44
+	+	10	49
+
+> ~/jura-ansible-dnsHA/cleanup.yml
+	*	1753772266	0
+	"	23	24
+	^	23	25
+	.	24	0
+	+	38	10
+	+	41	19
+	+	41	21
+	+	14	12
+	+	18	0
+	+	23	0
+	+	41	0
+	+	32	0
+	+	24	0
+	+	24	9
+	+	18	34
+	+	24	11
+	+	20	21
+	+	24	0
+	+	14	0
+	+	12	0
+	+	20	27
+	+	31	0
+	+	23	0
+	+	25	31
+	+	27	27
+	+	4	18
+	+	24	0
+
+> ~/jura-ansible-dnsHA/dns-setup.yml
+	*	1753771077	0
+	"	2	21
+	^	2	22
+	.	2	21
+	+	21	20
+	+	27	15
+	+	28	18
+	+	27	20
+	+	18	17
+	+	24	23
+	+	2	21
+
+> ~/jura-ansible-dnsHA/templates/named.conf.j
+	*	1753770784	0
+	"	1	0
+
+> ~/jura-ansible-dnsHA/dns-config-all.yml
+	*	1753769666	0
+	"	11	8
+	.	24	0
+	+	24	0
+
+> ~/jura-ansible-dnsHA/dns-config-pri.yml
+	*	1753769559	0
+	"	7	9
+	^	7	10
+	.	7	9
+	+	15	16
+	+	1	2
+	+	9	5
+	+	7	5
+	+	10	5
+	+	11	7
+	+	12	7
+	+	13	7
+	+	14	7
+	+	15	7
+	+	6	5
+	+	7	9
+
+> ~/jura-ansible-dnsHA/dns-config.yml
+	*	1753769095	0
+	"	17	43
+	^	2	58
+	.	2	57
+	+	38	0
+	+	24	49
+	+	25	8
+	+	38	0
+	+	25	12
+	+	27	18
+	+	28	12
+	+	31	37
+	+	38	0
+	+	37	16
+	+	38	0
+	+	2	43
+	+	24	64
+	+	2	57
+
+> ~/jura-ansible-dnsHA/templates/named.conf.local.j2
+	*	1753768068	0
+	"	1	0
 
 > ~/test-ansible/ansible-wordpress/dbPlaybook.yml
 	*	1753762703	0

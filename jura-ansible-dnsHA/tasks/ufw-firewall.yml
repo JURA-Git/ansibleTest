@@ -7,6 +7,7 @@
     firewall_rules: 
       - { rule: 'allow', port: '53', proto: 'tcp'}
       - { rule: 'allow', port: '53', proto: 'udp'}
+      - { rule: 'allow', port: '22', proto: 'tcp'}
 
   tasks:
     - name: Apply firewall rules from list
@@ -15,5 +16,8 @@
         port: "{{ item.port }}"
         proto: "{{ item.proto }}"
       loop: "{{ firewall_rules }}"
+    - name: Enable UFW
+      community.general.ufw:
+        state: enabled
 
 

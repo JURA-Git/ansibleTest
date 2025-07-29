@@ -1,0 +1,13 @@
+---
+- name : Final connect master-slave named service restart
+  hosts: all
+  gather_facts: no
+  become: true
+  vars:
+    service: named 
+  
+  tasks:
+    - name: named service restart
+      ansible.builtin.service:
+        name: "{{ service }}"
+        state: restarted
