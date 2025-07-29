@@ -1,0 +1,40 @@
+---
+# 메인 마스터 playbook 파일
+- name: Configure web server on Ubuntu 24.04
+  hosts: node1
+  become: true
+
+  # --- 모든 변수를 이 곳에서 중앙 관리 ---
+  vars:
+    # Environment
+    package_name: apache2
+    service_name: apache2
+
+    # Firewall
+    firewall_rules:
+      - { rule: 'allow', port: '22', proto: 'tcp' }
+      - { rule: 'allow', port: '80', proto: 'tcp' }
+
+    # Placeholder
+    target_file: /var/www/html/index.html
+
+    # Test
+    test_url: "http://{{ inventory_hostname }}"
+
+  tasks:
+    - name: Import the environment tasks
+      import_tasks: environment.yml
+
+    - name: Import the firewall tasks
+      import_tasks: firewall.yml
+
+    - name: Import the placeholder tasks
+      import_tasks: placeholder.yml
+
+    - name: Import the remove
+      import_tasts: cleanup.yml 
+
+# 모든 작업 수행 후, 제대로 작동하는지 테스트하는 playbook 파일 삽입
+- import_playbook: test.yml
+  vars:
+    url: "{{ test_url }}"

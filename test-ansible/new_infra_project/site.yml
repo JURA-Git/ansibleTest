@@ -1,0 +1,18 @@
+---
+- name: Configure Web Servers
+  hosts: node2
+  become: true
+  roles:
+    - role: unattended_upgrades
+      vars:
+        unattended_mail_to: "web-admins@example.com"
+        unattended_reboot_time: "04:00"
+
+- name: Configure Database Servers
+  hosts: node2
+  become: true
+  roles:
+    - role: unattended_upgrades
+      vars:
+        unattended_mail_to: "db-admins@example.com"
+        unattended_reboot_time: "02:00"

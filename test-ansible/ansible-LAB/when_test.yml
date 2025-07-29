@@ -1,0 +1,14 @@
+---
+- name: When test Playbook
+  hosts: all
+  tasks:
+  - name: My name1
+    debug:
+      msg: "Centos"
+    when: ansible_distribution == 'CentOS'
+
+  - name: My name2
+    debug:
+      msg: "Ubuntu"
+    when: ansible_distribution == 'Ubuntu'
+

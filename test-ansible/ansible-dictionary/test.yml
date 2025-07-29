@@ -1,0 +1,11 @@
+---
+- name: Test web service connectivity
+  hosts: node1
+  become: false
+
+  tasks:
+    - name: Connect to the web server from the control node
+      ansible.builtin.uri:
+        url: "http://{{ inventory_hostname }}"
+        status_code: 200
+      delegate_to: localhost

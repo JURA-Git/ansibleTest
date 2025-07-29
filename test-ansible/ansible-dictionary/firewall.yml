@@ -1,0 +1,16 @@
+---
+- name: Install UFW firewall
+  ansible.builtin.apt:
+    name: ufw
+    state: present
+
+- name: Enable UFW
+  community.general.ufw:
+    state: enabled
+
+- name: Apply firewall rules from list
+  community.general.ufw:
+    rule: "{{ item.rule }}"
+    port: "{{ item.port }}"
+    proto: "{{ item.proto }}"
+  loop: "{{ firewall_rules }}"
