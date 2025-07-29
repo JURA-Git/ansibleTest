@@ -1,5 +1,0 @@
----
-- name: Create placeholder file
-  ansible.builtin.copy:
-    content: "{{ inventory_hostname }} has been customized using Ansible.\n"
-    dest: "{{ target_file }}"

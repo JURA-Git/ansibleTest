@@ -1,9 +1,0 @@
----
-- import_playbook: common-hardening.yml
-  #- import_playbook: web-deploy.yml
-
-- name: Include task
-  hosts: webservers
-  become: true
-  tasks:
-    - include_tasks: web-deploy-task.yml

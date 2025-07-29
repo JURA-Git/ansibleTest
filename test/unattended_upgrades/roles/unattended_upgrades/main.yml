@@ -1,4 +1,0 @@
----
-# defaults file for unattended_upgrades
-unattended_mail_to: "root@localhost"
-unattended_reboot_time: "03:00"
