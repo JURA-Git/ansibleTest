@@ -1,12 +1,15 @@
 $TTL    604800
-@       IN      SOA     jura.com. root.jura.com. (
-                     2025072800         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
+@       IN      SOA     {{  common.name }}. root.{{ common.name }}. (
+                     	2025072800 ; Serial
+                        604800     ; Refresh
+                        86400      ; Retry
+                        2419200    ; Expire
+                        04800 )    ; Negative Cache TTL
 ;
-@       IN      NS      ns1.jura.com
-ns1	IN	A	10.10.8.4
-@	IN	NS	NS2.jura.com.
-ns2	IN	A	10.10.8.5
+@       IN      NS      ns1.{{ common.name }}.
+@	IN	NS	ns2.{{ common.name }}.
+
+ns1	IN	A	{{ common.ip.slave }}
+ns2	IN	A	{{ common.ip.slave }}
+www	IN	A	{{ common.ip.master  }}
+;

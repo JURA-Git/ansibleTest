@@ -1,0 +1,16 @@
+---
+- name: DNS Master & Slave Server Configuration pri-node playbook
+  hosts: pri
+  become: true
+  gather_facts: no
+  vars_files:
+    - ../vars/commons.yml
+  tasks:
+    - name: jura.com.db Jinga2 template PRI
+      template:
+        src: ../templates/jura.com.db.j2
+        dest: /etc/bind/jura.com.db
+        owner: root
+        group: bind
+        mode: 0640
+

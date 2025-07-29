@@ -1,0 +1,40 @@
+---
+- name: DELETE DNS UFW
+  hosts: all
+  gather_facts: yes
+  become: true
+  vars:
+    packages:
+      - bind9
+      - bind9-utils
+      - bind9-doc
+      - ufw
+    services:
+      - bind9
+      - ufw
+
+
+  tasks:
+    - name: Stop AND Disable Bind9
+      ansible.builtin.service:
+        name: "{{ services[0] }}"
+        state: stopped
+        enabled: false
+      ignore_errors: true
+
+    - name: Stop AND Disable UFW
+      ansible.builtin.service:
+        name: "{{ services[1] }}"
+        state: stopped
+        enabled: false
+      ignore_errors: true
+
+
+    - name: Remove DNS & UFW
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: absent
+        autoremove: yes
+        purge: yes
+        update_cache: yes
+

@@ -24,6 +24,6 @@
     - name: Start AND Enable service
       ansible.builtin.service:
         name: "{{ item }}"
-        stated: started
-        enable: yes
+        state: started
+        enabled: yes
       loop: "{{ services }}"

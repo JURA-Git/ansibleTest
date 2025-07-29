@@ -4,21 +4,20 @@
   become: true
   gather_facts: no
   vars_files:
-    - vars/commons.yml
-    - vars/local.yml
+    - ../vars/commons.yml
+    - ../vars/local.yml
   tasks:
-    - name: named.conf.options Jinja2 template
+    - name: named.conf.options Jinja2 template ALL
       template:
-        src: templates/named.conf.options.j2
+        src: ../templates/named.conf.options.j2
         dest: /etc/bind/named.conf.options
         owner: root
         group: bind
         mode: 0640
-    - name: named.conf.local Jinja2 template
+    - name: named.conf.local Jinja2 template ALL
       template:
-        src: templates/named.conf.local.j2
+        src: ../templates/named.conf.local.j2
         dest: /etc/bind/named.conf.local
         owner: root
         group: bind
         mode: 0640
-

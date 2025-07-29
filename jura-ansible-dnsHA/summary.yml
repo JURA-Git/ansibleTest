@@ -1,0 +1,6 @@
+---
+- import_playbook: tasks/dns-setup.yml 
+- import_playbook: tasks/dns-config-all.yml 
+- import_playbook: tasks/dns-config-pri.yml 
+
+- import_playbook: tasks/ufw-firewall.yml
