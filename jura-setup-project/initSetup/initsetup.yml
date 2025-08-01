@@ -1,0 +1,4 @@
+---
+# OS Init Setup and Settings
+- import_playbook: "tasks/util-install.yml"
+- import_playbook: "tasks/util-setting.yml"

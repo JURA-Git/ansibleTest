@@ -11,31 +11,53 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/For
+~MSle0~/  
 
 # Last Substitute Search Pattern:
-~MSle0&    
+~MSle0&  
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :wq!
-|2,0,1753776574,,"wq!"
+|2,0,1753953537,,"wq!"
 :!
-|2,0,1753776270,,"!"
-:Wq!
-|2,0,1753775984,,"Wq!"
+|2,0,1753952916,,"!"
 :q!
-|2,0,1753774948,,"q!"
+|2,0,1753950142,,"q!"
+:Wq!
+|2,0,1753949563,,"Wq!"
+:~
+|2,0,1753869634,,"~"
+:set noic
+|2,0,1753861122,,"set noic"
+:set unic
+|2,0,1753861119,,"set unic"
+:set ic
+|2,0,1753861085,,"set ic"
+:set IC
+|2,0,1753861081,,"set IC"
+:syntax on
+|2,0,1753861034,,"syntax on"
+:set expandtab
+|2,0,1753861017,,"set expandtab"
+:%s/  //
+|2,0,1753859559,,"%s/  //"
+:%s/  //g
+|2,0,1753859533,,"%s/  //g"
+:s/  //g
+|2,0,1753859519,,"s/  //g"
+:wq
+|2,0,1753858132,,"wq"
+:w
+|2,0,1753857126,,"w"
+:q
+|2,0,1753839328,,"q"
+:s/%/\t/g
+|2,0,1753839316,,"s/%/\\t/g"
 :'<,'>w
 |2,0,1753769394,,"'<,'>w"
-:w
-|2,0,1753760813,,"w"
-:q
-|2,0,1753749368,,"q"
-:wq
-|2,0,1753747852,,"wq"
 :%s/    //g
 |2,0,1753673941,,"%s/    //g"
 :q1
@@ -50,6 +72,20 @@ $
 |2,0,1753337025,,"ㅈ"
 
 # Search String History (newest to oldest):
+?/v
+|2,1,1753861127,47,"v"
+?/variable
+|2,1,1753861091,47,"variable"
+?   
+|2,1,1753859559,,"  "
+?/role
+|2,1,1753855839,47,"role"
+?/gee
+|2,1,1753854809,47,"gee"
+? %
+|2,1,1753839316,,"%"
+?/&s//\t/g
+|2,1,1753839287,47,"&s//\\t/g"
 ? @$
 |2,1,1753774859,,"@$"
 ?/sl
@@ -103,264 +139,704 @@ $
 
 # Registers:
 "0	LINE	0
-	      - { rule: 'allow', port: '53', proto: 'udp'}
-|3,0,0,1,1,0,1753775528,"      - { rule: 'allow', port: '53', proto: 'udp'}"
-"1	LINE	0
+	    ########################### git setting start
+|3,0,0,1,1,0,1753953517,"    ########################### git setting start"
+""1	LINE	0
 	
-|3,0,1,1,1,0,1753776484,""
+|3,1,1,1,1,0,1753953523,""
 "2	LINE	0
-	
-|3,0,2,1,1,0,1753776483,""
+	    - name:
+|3,0,2,1,1,0,1753952485,"    - name:"
 "3	LINE	0
-	    - ../vars/commons.yml
-|3,0,3,1,1,0,1753776482,"    - ../vars/commons.yml"
+	      loop: "{{  }}"
+|3,0,3,1,1,0,1753952254,"      loop: \"{{  }}\""
 "4	LINE	0
-	  vars_files:
-|3,0,4,1,1,0,1753776482,"  vars_files:"
+	        backup: yes
+|3,0,4,1,1,0,1753951998,"        backup: yes"
 "5	LINE	0
-	      - { rule: 'allow', port: '53', proto: 'udp'}
-|3,0,5,1,1,0,1753775573,"      - { rule: 'allow', port: '53', proto: 'udp'}"
+	        state: present
+|3,0,5,1,1,0,1753951997,"        state: present"
 "6	LINE	0
-	        listen-on-v4 { any; };
-|3,0,6,1,1,0,1753774503,"        listen-on-v4 { any; };"
+	        line: '{{ item }} no'
+|3,0,6,1,1,0,1753951996,"        line: '{{ item }} no'"
 "7	LINE	0
-	      loop: "{{ services }}"
-|3,0,7,1,1,0,1753772119,"      loop: \"{{ services }}\""
+	        regexp: '^#{{ item }}'
+|3,0,7,1,1,0,1753951996,"        regexp: '^#{{ item }}'"
 "8	LINE	0
-	      - bind9
-|3,0,8,1,1,0,1753772092,"      - bind9"
+	        path: /etc/ssh/sshd_config
+|3,0,8,1,1,0,1753951995,"        path: /etc/ssh/sshd_config"
 "9	LINE	0
-	    services:
-|3,0,9,1,1,0,1753772091,"    services:"
-""-	CHAR	0
-	:
-|3,1,36,0,1,0,1753776514,":"
+	      ansible.builtin.lineinfile:
+|3,0,9,1,1,0,1753951995,"      ansible.builtin.lineinfile:"
+"-	CHAR	0
+	"
+|3,0,36,0,1,0,1753952931,"\""
 
 # File marks:
-'0  7  24  ~/jura-ansible-dnsHA/summary.yml
-|4,48,7,24,1753776574,"~/jura-ansible-dnsHA/summary.yml"
-'1  9  6  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,49,9,6,1753776536,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
-'2  13  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,50,13,23,1753776423,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
-'3  17  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,51,17,23,1753776423,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
-'4  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,52,7,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
-'5  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,53,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
-'6  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,54,7,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
-'7  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,55,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
-'8  10  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,56,10,12,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
-'9  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,57,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
+'0  46  3  ~/jura-setup-project/initSetup/util-setting.yml
+|4,48,46,3,1753953537,"~/jura-setup-project/initSetup/util-setting.yml"
+'1  4  42  ~/jura-setup-project/initSetup/initsetup.yml
+|4,49,4,42,1753952939,"~/jura-setup-project/initSetup/initsetup.yml"
+'2  52  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,50,52,16,1753952869,"~/jura-setup-project/initSetup/util-setting.yml"
+'3  51  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,51,51,16,1753952869,"~/jura-setup-project/initSetup/util-setting.yml"
+'4  50  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,52,50,29,1753952740,"~/jura-setup-project/initSetup/util-setting.yml"
+'5  50  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,53,50,29,1753952740,"~/jura-setup-project/initSetup/util-setting.yml"
+'6  49  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,54,49,29,1753952740,"~/jura-setup-project/initSetup/util-setting.yml"
+'7  49  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,55,49,29,1753952740,"~/jura-setup-project/initSetup/util-setting.yml"
+'8  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,56,4,19,1753950258,"~/jura-setup-project/initSetup/util-setting.yml"
+'9  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,57,4,19,1753950258,"~/jura-setup-project/initSetup/util-setting.yml"
 
 # Jumplist (newest first):
--'  7  24  ~/jura-ansible-dnsHA/summary.yml
-|4,39,7,24,1753776574,"~/jura-ansible-dnsHA/summary.yml"
--'  6  16  ~/jura-ansible-dnsHA/summary.yml
-|4,39,6,16,1753776551,"~/jura-ansible-dnsHA/summary.yml"
--'  9  6  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,9,6,1753776536,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  9  6  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,9,6,1753776536,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  13  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,13,23,1753776479,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  13  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,13,23,1753776479,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  17  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,17,23,1753776423,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  17  23  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,17,23,1753776423,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,7,13,1753776358,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,7,13,1753776358,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,7,13,1753776358,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  7  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,7,13,1753776358,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  6  13  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,6,13,1753776354,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  10  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,10,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  14  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,14,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  13  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,13,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  10  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,10,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  14  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,14,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  13  12  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,13,12,1753776127,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  7  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,7,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  8  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,8,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  7  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,7,0,1753776087,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,5,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  9  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,9,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  6  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,6,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  8  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,8,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,5,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,5,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  9  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,9,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  6  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,6,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  8  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,8,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,5,7,1753776034,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,5,7,1753775985,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  5  7  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,5,7,1753775985,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  1  0  ~/jura-ansible-dnsHA/tasks/named-restart.yml
-|4,39,1,0,1753775888,"~/jura-ansible-dnsHA/tasks/named-restart.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
--'  11  0  ~/jura-ansible-dnsHA/tasks/ufw-firewall.yml
-|4,39,11,0,1753775576,"~/jura-ansible-dnsHA/tasks/ufw-firewall.yml"
+-'  46  3  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,46,3,1753953537,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  56  46  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,56,46,1753953159,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  52  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,52,16,1753953074,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  42  ~/jura-setup-project/initSetup/initsetup.yml
+|4,39,4,42,1753952939,"~/jura-setup-project/initSetup/initsetup.yml"
+-'  4  42  ~/jura-setup-project/initSetup/initsetup.yml
+|4,39,4,42,1753952939,"~/jura-setup-project/initSetup/initsetup.yml"
+-'  3  8  ~/jura-setup-project/initSetup/initsetup.yml
+|4,39,3,8,1753952895,"~/jura-setup-project/initSetup/initsetup.yml"
+-'  3  8  ~/jura-setup-project/initSetup/initsetup.yml
+|4,39,3,8,1753952895,"~/jura-setup-project/initSetup/initsetup.yml"
+-'  51  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,51,16,1753952869,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  51  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,51,16,1753952869,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  50  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,50,29,1753952863,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  49  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,49,29,1753952863,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  49  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,49,29,1753952863,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  49  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,49,29,1753952740,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  49  29  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,49,29,1753952740,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  16  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,16,16,1753952004,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  15  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,15,16,1753952004,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  15  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,15,16,1753952004,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  15  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,15,16,1753952004,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  15  16  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,15,16,1753952004,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950456,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950456,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950456,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950456,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950456,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950258,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950258,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950241,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  4  19  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,4,19,1753950241,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950178,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950160,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  8  ~/jura-setup-project/initSetup/util-setting.yml
+|4,39,2,8,1753950160,"~/jura-setup-project/initSetup/util-setting.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
+-'  2  20  ~/jura-setup-project/initSetup/tasks/util-install.yml
+|4,39,2,20,1753950142,"~/jura-setup-project/initSetup/tasks/util-install.yml"
 
 # History of marks within files (newest to oldest):
+
+> ~/jura-setup-project/initSetup/util-setting.yml
+	*	1753953536	0
+	"	46	3
+	^	46	4
+	.	14	0
+	+	2	21
+	+	3	19
+	+	4	20
+	+	12	0
+	+	19	16
+	+	9	6
+	+	6	7
+	+	9	6
+	+	6	9
+	+	11	27
+	+	8	27
+	+	7	22
+	+	9	29
+	+	23	35
+	+	19	39
+	+	20	15
+	+	19	17
+	+	20	37
+	+	23	29
+	+	20	21
+	+	19	24
+	+	22	18
+	+	6	19
+	+	5	5
+	+	23	35
+	+	20	27
+	+	83	24
+	+	83	18
+	+	83	0
+	+	13	8
+	+	16	17
+	+	25	18
+	+	32	36
+	+	34	11
+	+	25	0
+	+	24	0
+	+	41	0
+	+	13	8
+	+	15	34
+	+	34	15
+	+	33	0
+	+	41	0
+	+	37	20
+	+	38	21
+	+	37	17
+	+	42	0
+	+	15	41
+	+	53	23
+	+	42	25
+	+	45	27
+	+	46	31
+	+	56	41
+	+	83	0
+	+	29	28
+	+	49	0
+	+	53	23
+	+	52	17
+	+	53	21
+	+	50	29
+	+	52	17
+	+	56	0
+	+	15	42
+	+	56	32
+	+	55	0
+	+	56	49
+	+	82	0
+	+	57	30
+	+	61	8
+	+	58	28
+	+	61	0
+	+	59	44
+	+	60	54
+	+	63	0
+	+	61	0
+	+	14	0
+
+> ~/jura-setup-project/initSetup/initsetup.yml
+	*	1753952938	0
+	"	4	42
+	^	4	43
+	.	4	42
+	+	3	43
+	+	5	0
+	+	3	43
+	+	4	42
+
+> ~/jura-setup-project/initSetup/tasks/util-install.yml
+	*	1753950141	0
+	"	2	20
+	^	2	21
+	.	2	20
+	+	2	20
+
+> ~/jura-setup-project/initSetup/util-install.yml
+	*	1753949146	0
+	"	15	7
+	^	15	8
+	.	13	0
+	+	8	18
+	+	8	11
+	+	25	30
+	+	28	16
+	+	27	22
+	+	26	23
+	+	27	23
+	+	26	24
+	+	27	24
+	+	28	21
+	+	23	28
+	+	24	29
+	+	17	39
+	+	26	23
+	+	27	0
+	+	17	56
+	+	22	0
+	+	18	0
+	+	25	8
+	+	26	8
+	+	27	8
+	+	28	8
+	+	21	0
+	+	17	26
+	+	18	30
+	+	20	24
+	+	28	23
+	+	25	14
+	+	20	23
+	+	3	17
+	+	28	0
+	+	16	25
+	+	20	19
+	+	9	11
+	+	10	23
+	+	11	10
+	+	23	0
+	+	6	13
+	+	14	15
+	+	30	0
+	+	24	28
+	+	28	27
+	+	28	24
+	+	28	23
+	+	29	0
+	+	28	0
+	+	3	0
+	+	5	13
+	+	3	17
+	+	5	8
+	+	11	0
+	+	13	0
+
+> ~/jura-setup-project/initSetup/inventory.yml
+	*	1753948865	0
+	"	14	15
+	^	6	17
+	.	6	16
+	+	11	4
+	+	6	13
+	+	11	7
+	+	6	16
+	+	11	12
+	+	6	16
+
+> ~/jura-setup-project/initSetup/cleanup.yml
+	*	1753870075	0
+	"	21	23
+	^	21	24
+	.	21	23
+	+	24	0
+	+	16	0
+	+	32	0
+	+	16	0
+	+	2	16
+	+	16	24
+	+	19	18
+	+	20	21
+	+	25	21
+	+	28	20
+	+	19	19
+	+	21	0
+	+	28	17
+	+	29	19
+	+	17	28
+	+	3	17
+	+	13	12
+	+	12	0
+	+	21	23
+
+> ~/jura-setup-project/inventory.yml
+	*	1753868064	0
+	"	6	16
+	^	6	17
+	.	6	16
+	+	25	3
+	+	26	7
+	+	4	34
+	+	1	0
+	+	11	7
+	+	6	16
+
+> ~/jura-setup-project/tests/initsetup.yml
+	*	1753865824	0
+	"	2	0
+	^	2	1
+	.	2	0
+	+	4	20
+	+	4	0
+	+	3	0
+	+	2	0
+
+> ~/jura-setup-project/tests/util-install.yml
+	*	1753865678	0
+	"	5	6
+	^	5	7
+	.	5	0
+	+	1	0
+	+	4	19
+	+	3	17
+	+	2	23
+	+	6	0
+	+	5	0
+
+> ~/jura-setup-project/tests/inventory.yml
+	*	1753865232	0
+	"	27	0
+	^	28	37
+	.	30	0
+	+	30	7
+	+	30	9
+	+	30	11
+	+	30	10
+	+	30	0
+	+	11	14
+	+	30	0
+	+	13	19
+	+	18	15
+	+	16	37
+	+	30	14
+	+	30	13
+	+	30	32
+	+	6	0
+	+	30	0
+	+	16	36
+	+	20	36
+	+	30	0
+	+	17	0
+	+	24	34
+	+	21	18
+	+	23	20
+	+	24	37
+	+	29	0
+	+	28	36
+	+	30	0
+
+> ~/jura-setup-project/tests/ansible.cfg
+	*	1753864670	0
+	"	2	0
+	.	3	0
+	+	2	25
+	+	3	0
+
+> ~/jura-setup-project/tests/ansible.cf
+	*	1753864553	0
+	"	1	0
+
+> ~/jura-setup-project/tests/cd
+	*	1753863945	0
+	"	1	0
+	^	1	0
+
+> ~/jura-setup-project/initSetup/README.md
+	*	1753861127	0
+	"	12	4
+	^	7	5
+	.	7	4
+	+	4	50
+	+	5	4
+	+	7	4
+
+> ~/jura-setup-project/ansible.cfg
+	*	1753859292	0
+	"	2	11
+	^	2	12
+	.	2	12
+	+	1	9
+	+	5	22
+	+	9	22
+	+	3	24
+	+	2	22
+	+	1	8
+	+	2	12
+
+> ~/jura-setup-project/hosts.yml
+	*	1753857497	0
+	"	16	16
+	^	5	20
+	.	5	20
+	+	2	10
+	+	12	15
+	+	10	53
+	+	8	10
+	+	29	6
+	+	8	32
+	+	29	6
+	+	10	12
+	+	11	0
+	+	14	10
+	+	10	10
+	+	14	17
+	+	10	18
+	+	14	14
+	+	19	34
+	+	8	32
+	+	8	13
+	+	18	18
+	+	16	15
+	+	8	0
+	+	23	35
+	+	25	30
+	+	30	0
+	+	27	0
+	+	5	28
+	+	6	50
+	+	26	27
+	+	28	0
+	+	26	32
+	+	5	20
+
+> ~/jura-setup-project/hosts
+	*	1753856448	0
+	"	3	0
+	^	3	0
+	.	3	0
+	+	1	11
+	+	4	0
+	+	1	12
+	+	3	0
+
+> ~/test-ansible/ansible-wordpress/webPlaybook.yml
+	*	1753855957	0
+	"	94	8
+	.	4	0
+	+	22	0
+	+	29	0
+	+	18	22
+	+	8	0
+	+	2	19
+	+	14	0
+	+	16	0
+	+	11	25
+	+	5	17
+	+	8	0
+	+	9	0
+	+	10	0
+	+	11	34
+	+	12	6
+	+	4	0
+
+> ~/test-ansible/ansible-wordpress/dbPlaybook.yml
+	*	1753854858	0
+	"	75	0
+	^	75	0
+	.	74	48
+	+	142	0
+	+	85	0
+	+	92	0
+	+	76	18
+	+	116	0
+	+	116	8
+	+	116	0
+	+	116	105
+	+	116	29
+	+	116	11
+	+	116	0
+	+	111	103
+	+	111	0
+	+	111	68
+	+	115	0
+	+	111	32
+	+	115	0
+	+	113	98
+	+	113	0
+	+	114	0
+	+	1	19
+	+	74	48
+
+> ~/test-ansible/ansible-LAB/hosts.dynamic
+	*	1753839343	0
+	"	24	0
+	^	24	0
+	.	23	49
+	+	1	12
+	+	1	4
+	+	1	12
+	+	23	49
+
+> ~/test-ansible/ansible-LAB/hosts
+	*	1753838899	0
+	"	2	0
+	^	2	0
+	.	2	0
+	+	5	9
+	+	1	12
+	+	1	10
+	+	2	0
+
+> ~/test-ansible/ansible-wordpress/password.yml
+	*	1753837582	0
+	"	1	0
+
+> ~/.ansible/tmp/ansible-local-6420jleitkw0/tmpuqe151z9.yml
+	*	1753837228	0
+	"	5	0
+	^	5	0
+	.	5	0
+	+	5	27
+	+	2	0
+	+	3	0
+	+	4	0
+	+	5	0
+
+> ~/.ansible/tmp/ansible-local-4805c9mnnqun/tmp2y87uv2g.yml
+	*	1753836929	0
+	"	1	0
+
+> ~/.ansible/tmp/ansible-local-3507z4_twk7p/tmpxp0kl7kp.yml
+	*	1753836752	0
+	"	2	12
+	^	2	13
+	.	2	12
+	+	1	2
+	+	2	5
+	+	1	2
+	+	2	12
 
 > ~/jura-ansible-dnsHA/summary.yml
 	*	1753776573	0
@@ -593,34 +1069,6 @@ $
 	*	1753768068	0
 	"	1	0
 
-> ~/test-ansible/ansible-wordpress/dbPlaybook.yml
-	*	1753762703	0
-	"	1	0
-	^	75	0
-	.	74	48
-	+	142	0
-	+	85	0
-	+	92	0
-	+	76	18
-	+	116	0
-	+	116	8
-	+	116	0
-	+	116	105
-	+	116	29
-	+	116	11
-	+	116	0
-	+	111	103
-	+	111	0
-	+	111	68
-	+	115	0
-	+	111	32
-	+	115	0
-	+	113	98
-	+	113	0
-	+	114	0
-	+	1	19
-	+	74	48
-
 > ~/test-ansible/ansible-wordpress/templates/wp-config.php.j2
 	*	1753760973	0
 	"	5	33
@@ -631,20 +1079,6 @@ $
 > ~/test-ansible/ansible-wordpress/templates/wordpress.conf.j2
 	*	1753760864	0
 	"	1	0
-
-> ~/test-ansible/ansible-wordpress/webPlaybook.yml
-	*	1753760768	0
-	"	10	25
-	^	10	26
-	.	10	25
-	+	20	0
-	+	27	0
-	+	16	22
-	+	7	0
-	+	2	19
-	+	12	0
-	+	14	0
-	+	10	25
 
 > ~/test-ansible/ansible-wordpress/cleanup.yml
 	*	1753760259	0
@@ -1621,332 +2055,3 @@ $
 	+	2	2
 	+	3	1
 	+	2	25
-
-> ~/ansibleLab/fact.yml
-	*	1753665005	0
-	"	15	0
-	^	14	0
-	.	14	0
-	+	17	0
-	+	17	4
-	+	5	0
-	+	17	4
-	+	9	37
-	+	8	5
-	+	9	41
-	+	12	56
-	+	11	5
-	+	12	5
-	+	12	26
-	+	12	34
-	+	14	0
-	+	17	2
-	+	17	0
-	+	14	1
-	+	3	13
-	+	11	20
-	+	12	22
-	+	14	0
-	+	12	30
-	+	8	0
-	+	12	22
-	+	14	0
-
-> ~/toPlaybook/hosts
-	*	1753661874	0
-	"	1	12
-	^	1	13
-	.	1	0
-	+	1	12
-	+	4	1
-	+	1	13
-	+	4	14
-	+	12	12
-	+	13	13
-	+	1	0
-
-> ~/toPlaybook/ansible.cfg
-	*	1753429986	0
-	"	1	0
-
-> ~/ansible-nginx/playbook.yml
-	*	1753429080	0
-	"	14	0
-	^	14	0
-	.	14	0
-	+	87	25
-	+	88	26
-	+	89	28
-	+	107	12
-	+	89	29
-	+	78	18
-	+	94	52
-	+	96	18
-	+	107	19
-	+	107	21
-	+	78	17
-	+	107	0
-	+	100	21
-	+	101	16
-	+	100	10
-	+	97	26
-	+	106	23
-	+	61	23
-	+	33	0
-	+	32	0
-	+	36	0
-	+	37	0
-	+	32	16
-	+	32	6
-	+	32	0
-	+	33	0
-	+	36	0
-	+	37	0
-	+	41	37
-	+	32	0
-	+	46	0
-	+	38	0
-	+	47	0
-	+	43	39
-	+	45	17
-	+	44	21
-	+	34	53
-	+	35	29
-	+	52	20
-	+	55	28
-	+	15	9
-	+	14	26
-	+	11	0
-	+	10	0
-	+	9	0
-	+	14	0
-	+	11	0
-	+	10	0
-	+	9	0
-	+	14	15
-	+	24	0
-	+	25	34
-	+	27	13
-	+	27	14
-	+	27	13
-	+	27	14
-	+	28	0
-	+	30	0
-	+	29	0
-	+	29	37
-	+	30	37
-	+	29	16
-	+	30	15
-	+	14	0
-	+	75	0
-	+	4	18
-	+	69	49
-	+	71	25
-	+	72	11
-	+	72	12
-	+	72	11
-	+	72	12
-	+	74	19
-	+	69	28
-	+	72	11
-	+	73	9
-	+	74	9
-	+	13	0
-	+	12	0
-	+	11	0
-	+	10	0
-	+	11	0
-	+	12	0
-	+	13	0
-	+	14	0
-
-> ~/ansible-nginx/hosts
-	*	1753423026	0
-	"	18	0
-	^	13	9
-	.	13	8
-	+	1	1
-	+	8	9
-	+	1	3
-	+	4	9
-	+	13	8
-
-> ~/ansibleLab/test.sh
-	*	1753347937	0
-	"	15	32
-	^	15	33
-	.	15	32
-	+	13	1
-	+	13	8
-	+	18	0
-	+	15	0
-	+	16	32
-	+	15	32
-
-> ~/ansibleLab/installApach.yml
-	*	1753347925	0
-	"	10	21
-	^	28	44
-	.	28	43
-	+	7	23
-	+	7	5
-	+	11	24
-	+	6	6
-	+	12	12
-	+	7	18
-	+	12	30
-	+	13	208
-	+	13	97
-	+	13	217
-	+	13	227
-	+	13	217
-	+	17	30
-	+	12	40
-	+	15	81
-	+	12	0
-	+	14	12
-	+	12	12
-	+	14	73
-	+	15	30
-	+	15	28
-	+	16	0
-	+	14	38
-	+	16	42
-	+	17	95
-	+	23	66
-	+	18	74
-	+	20	11
-	+	21	5
-	+	22	5
-	+	23	5
-	+	24	30
-	+	16	0
-	+	27	29
-	+	37	0
-	+	24	31
-	+	27	0
-	+	26	11
-	+	37	0
-	+	27	59
-	+	27	52
-	+	29	27
-	+	28	28
-	+	31	42
-	+	29	36
-	+	30	39
-	+	31	41
-	+	36	53
-	+	35	34
-	+	29	47
-	+	17	30
-	+	18	0
-	+	19	0
-	+	24	8
-	+	25	0
-	+	30	0
-	+	31	0
-	+	32	0
-	+	28	32
-	+	33	31
-	+	34	83
-	+	27	36
-	+	34	28
-	+	30	41
-	+	28	43
-
-> ~/ansibleLab/test
-	*	1753347353	0
-	"	13	4
-	^	13	5
-	.	13	4
-	+	6	44
-	+	2	40
-	+	3	14
-	+	6	99
-	+	11	5
-	+	8	16
-	+	5	6
-	+	8	0
-	+	5	11
-	+	9	28
-	+	5	5
-	+	9	34
-	+	11	17
-	+	15	0
-	+	11	27
-	+	11	28
-	+	15	0
-	+	14	1
-	+	11	31
-	+	11	13
-	+	12	39
-	+	13	4
-
-> ~/ansibleLab/playbook_test.yml
-	*	1753342588	0
-	"	8	6
-	^	13	22
-	.	8	0
-	+	4	28
-	+	3	28
-	+	2	28
-	+	3	31
-	+	2	31
-	+	3	25
-	+	6	8
-	+	7	21
-	+	2	25
-	+	15	8
-	+	8	39
-	+	12	10
-	+	12	11
-	+	14	21
-	+	13	21
-	+	7	32
-	+	3	13
-	+	13	21
-	+	8	0
-
-> ~/ansibleLab/update_hosts.yml
-	*	1753341643	0
-	"	11	15
-	^	10	94
-	.	10	93
-	+	30	27
-	+	1	0
-	+	17	0
-	+	18	0
-	+	20	0
-	+	21	0
-	+	22	0
-	+	23	0
-	+	24	0
-	+	25	0
-	+	26	0
-	+	27	0
-	+	28	0
-	+	29	0
-	+	30	18
-	+	29	18
-	+	28	18
-	+	27	18
-	+	26	23
-	+	16	20
-	+	15	20
-	+	14	20
-	+	13	20
-	+	12	26
-	+	10	93
-
-> ~/ansibleLab/ansible.cfg
-	*	1753336709	0
-	"	5	19
-	^	5	20
-	.	5	19
-	+	14	22
-	+	5	19
-
-> /etc/ssh/sshd_config
-	*	1753320613	0
-	"	42	0
-	^	42	1

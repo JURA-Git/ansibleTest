@@ -1,0 +1,31 @@
+---
+- name: Utils Installing
+  hosts: node1-web
+  gather_facts: false
+  vars: 
+    packages:
+      - vim
+      - tree
+      - git
+      - build-essential
+      - ssh
+      - fail2ban
+    services:
+      - fail2ban
+  tasks:
+    - name: APT Installing
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+
+
+    - name: Start and Enable
+      ansible.builtin.systemd:
+        name: "{{ item }}"
+        state: started
+        enabled: true
+      ignore_errors: true
+      loop: "{{ services }}"
+
+

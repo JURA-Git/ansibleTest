@@ -1,0 +1,82 @@
+---
+- name: Utils Setting
+  hosts: node1-web 
+  gather_facts: true
+  vars:
+    ssh_no_settings:
+      - PermitRootLogin
+      - PermitEmptyPasswords
+      - PasswordAuthentication
+    ssh_yes_settings:
+      - PubkeyAuthentication
+
+  tasks:
+
+    ########################### ssh setting start 
+    - name: SSH no Settings
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^{{ item }}'
+        line: '{{ item }} no'
+        state: present
+        backup: yes
+      loop: "{{ ssh_no_settings }}"
+
+    - name: SSH yes Settings
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^{{ item }}'
+        line: '{{ item }} yes'
+        state: present
+        backup: yes
+      loop: "{{ ssh_yes_settings }}"
+
+    - name: SSH Port Setting
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^Port' 
+        line: 'Port 5522'
+        state: present
+        backup: yes
+
+    - name: SSH AllowUsers Setting
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^AllowUsers' 
+        line: 'AllowUsers jura_m'
+        state: present
+        backup: yes
+
+    - name: SSH Service Reload
+      ansible.builtin.systemd:
+        name: ssh
+        state: reloaded
+
+
+    ########################### git setting start
+    - name: Git Global Setting
+      ansible.builtin.shell: |
+        git config --global user.name "jura"
+        git config --global user.email "hegs3@naver.com"
+        
+
+    ########################### git setting start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

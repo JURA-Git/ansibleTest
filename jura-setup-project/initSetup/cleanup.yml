@@ -1,0 +1,31 @@
+---
+- name: Utils Uninstalling
+  hosts: node1-web
+  gather_facts: true
+  vars:
+    packages:
+      - vim
+      - tree
+      - ssh
+      - git
+      - build-essential
+      - fail2ban
+    services:
+      - fail2ban
+  tasks:
+    - name: Stop and Disable
+      ansible.builtin.systemd:
+        name: "{{ item }}"
+        state: stopped
+        enabled: false
+      loop: "{{ services }}"
+
+
+
+    - name: APT Remove
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: absent
+        update_cache: yes
+
+

@@ -1,6 +1,7 @@
 [webservers]
 node1 ansible_host=10.10.8.4
 node2 ansible_host=10.10.8.5
+[dbservers]
 node3 ansible_host=10.10.8.6
 node4 ansible_host=10.10.8.7
 

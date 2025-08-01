@@ -1,573 +1,3 @@
-ansible node1 -m shell "systemctl status apache2"
-ansible node1 -m shell 'systemctl status apache2'
-ansible node1 -m shell 'sudo systemctl status apache2'
-ansible node1 -m shell 'systemctl status apache2' -b
-ansible node1 -m shell -a 'systemctl is-active apache2' -b
-ls
-vi installApach.yml 
-ls
-vi installApach.yml 
-ansible-playbook installApach.yml 
-vi installApach.yml 
-ansible-playbook installApach.yml 
-vi installApach.yml 
-ansible-playbook installApach.yml 
-vi installApach.yml 
-ls
-vi installApach.yml 
-ansible-playbook installApach.yml 
-vi installApach.yml 
-ansible-playbook installApach.yml 
-vi installApach.yml 
-ansible-playbook installApach.yml 
-vi installApach.yml 
-ansible-playbook installApach.yml 
-vi installApach.yml 
-ansible-playbook installApach.yml 
-clear
-ls
-vi test
-mv test test.sh
-source test.sh 
-ls
-cd ansibleLab/
-ls
-vi test.sh 
-ls
-source test.sh 
-ls
-cd ansibleLab/
-ls
-cat hosts
-cat /etc/hosts
-ls
-cat update_hosts.yml
-ls
-cp update_hosts.yml fact.yml
-vi fact.yml 
-ansible-playbook test.sh 
-clear
-ls
-ansible-playbook fact.yml
-vi fact.yml 
-ansible-playbook fact.yml
-vi fact.yml 
-ansible-playbook fact.yml
-vi fact.yml 
-ansible-playbook fact.yml
-vi fact.yml 
-ansible-playbook fact.yml
-vi fact.yml 
-ls
-cat hosts 
-cat update_hosts.yml 
-cat /etc/hosts
-ls
-cat ansible.cfg 
-clear
-for i in {3..7};do ping -4 10.10.8.${i}; done
-ansible --help
-for i in {4..7};do sudo  jura_m@10.10.8.${i}; done
-cd
-ls
-cd ansibleLab/
-ansible-inventory list
-ansible-inventory -l
-ansible-inventory --list
-ansible node1 -m user -a "name=jura1"
-ansible node1 -m shell -a "tail -n5 /etc/passwd"
-ansible node1 -m shell -a "tail -n5 /etc/shadow"
-ansible node1 -m user -a "name=jura1 update_password=always" password={{ 'dkagh1.'|password_hash{'sha512'} }}"
-.
-;
-ansible node1 -m user -a "name=jura1 update_password=always password={{ 'dkagh1.'|password_hash{'sha512'} }}"
-ansible node1 -m user -a "name=jura1 update_password=always password={{ 'dkagh1.'|password_hash('sha512') }}"
-ssh jura1@10.10.8.3
-ansible node1 -m shell -a "tail -n5 /etc/shadow"
-ansible webservers -m shell -a "echo 'jura1   ALL=(ALL)   NOPASSWD:ALL' > /etc/sudoers.d/jura1"
-ansible webservers -m copy -a "content='jura1 ALL=(ALL) NOPASSWD: ALL' dest=/etc/sudoers.d/jura1 mode=0644 validate='/usr/sbin/visudo -c -f \'%s\''"
-ansible node1 -m user -a "name=jura1 update_password=always password={{ 'dkagh1.' | password_hash('sha512') }}"
-ansible node1 -m shell -a "echo 'jura1   ALL=(ALL)   NOPASSWD:ALL' > /etc/sudoers.d/jura1"
-ansible node1 -m copy -a "content='jura1 ALL=(ALL) NOPASSWD: ALL' dest=/etc/sudoers.d/jura1 mode=0644 validate='/usr/sbin/visudo -c -f \'%s\''"
-ssh jura1@10.10.8.3
-ansible node1 -m user -a "name=jura1 update_password=always password={{ 'dkagh1.' | password_hash('sha512') }}"
-ssh jura1@10.10.8.3
-ansible node1 -m user -a "name=jura1 state=absent remove=yes"
-ansible node1 -m shell -a "cat /etc/shadow"
-ansible node1 -m user -a "name=jura1 state=present" 
-ansible node1 -m user -a "name=jura1 state=absent remove=yes"
-ansible an-node1 -m service -a "name=apache2 state=started"
-ansible node1 -m service -a "name=apache2 state=started"
-ansible node1 -m service -a "name=apache2 state=stoped"
-ansible node1 -m service -a "name=apache2 state=stop"
-ansible node1 -m service -a "name=apache2 state=stoped"
-ansible node1 -m service -a "name=apache2 state=stopped"
-ansible node1 -m service -a "name=apache2 state=restarted"
-ansible node1 -m service -a "name=apache2 state=status"
-ansible node1 -m service -a "name=apache2 state=distabled"
-ansible node1 -m setup -a "gather_subnet=all"
-ansible node1 -m setup -a "gather_subset=all"
-ansible node1 -m setup -a "gather_subset=ansible_all_ipv4_"
-ansible node1 -m setup -a "gather_subset=ansible_all_ipv4_addresses"
-ansible node1 -m setup -a "ansible_all_ipv4_addresses"
-ansible node1 -m setup -a "all_ipv4_addresses"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses"
-ansible node1 -m setup -a "gather_subset=all"
-ansible node1 -m setup -a "gather_subset=network"
-ansible node1 -m setup -a "gather_subset=network filter=ansible_architecture"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=ansible_architecture"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresse"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=python"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=pythond"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses ffilter=pythond"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=python"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=python filter=type"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=python.type"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=python filter=version_info"
-ansible node1 -m setup -a 'filter=ansible_python'
-ansible node1 -m debug -a 'var=ansible_python.type'
-ansible node1 -m debug -a 'var=ansible_facts.ansible_python'
-ansible node1 -m debug -a 'var=ansible_facts.ansible_python.type'
-ansible node1 -m debug -a 'var=facts.ansible_python.type'
-ansible node1 -m debug -a 'var=ansible_python.type'
-ansible node1 -m debug -a 'var=ansible_facts.ansible_python.type'
-ansible node1 -m setup
-ansible node1 -m debug -a 'var=ansible_facts.ansible_python.type'
-ansible node1 -m setup
-ansible node1 -m debug -a 'var=ansible_facts.ansible_python.type'
-history
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=ansible_architecture"
-ansible node1 -m setup -a "filter=ansible_architecture"
-ansible node1 -m setup -a "gather_subset=all_ipv4_addresses filter=ansible_architecture"ansible node1 -m copy -a "src=/etc/hosts dest=/tmp/hosts
-"
-ansible node1 -m copy -a "src=/etc/hosts dest=/tmp/hosts"
-ansible node1 -m fetch -a "sr/etc/passwd dest=. flat=yes"
-ansible node1 -m fetch -a "src=/etc/passwd dest=. flat=yes"
-ansible node1 -m fetch -a "src=/etc/passwd dest=/root flat=yes"
-ansible node1 -m fetch -a "src=/etc/passwd dest=/root/ flat=yes"
-ansible node1 -m fetch -a "src=/home/jura_m/123 dest=/root/ flat=yes"
-sudo ansible node1 -m fetch -a "src=/home/jura_m/123 dest=/root/ flat=yes"
-sudo ansible node1 -m fetch -a "src=/home/jura_m/123 dest=/home/jura_m/ flat=yes"
-sudo ansible node1 -m fetch -a "src=~/123 dest=~/ flat=yes"
-ansible node1 -m group -a "name=Angels state=present"
-ansible node1 -m user -a "name=user02 groups=angels"
-ansible node1 -m user -a "name=user02 groups=Angels"
-ansible node1 -m user -a "name=user2 generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa1"
-
-ls
-cd ansibleLab/
-cd ..
-ls
-mkdir ansible-nginx
-cd ansible
-cd ansible-nginx/
-ls
-cp ../ansibleLab/ansible.cfg 
-cp ../ansibleLab/ansible.cfg .
-cp ../ansibleLab/hosts .
-cat ansible.cfg 
-vi hosts 
-ansible-inventory --lis
-ls
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml
-vi hosts 
-vi playbook.yml --syn
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml
-ansible-playbook playbook.yml 
-
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-ansible-playbook playbook.yml 
-curl http://10.10.8.4
-curl http://node1
-curl http://node2
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-vi playbook.yml
-cat playbook.yml 
-ansible-playbook --syntax-check playbook.yml 
-ansible-playbook playbook.yml 
-curl http://10.10.8.6
-clear
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-vi playbook.yml
-rm -rf playbook.yml 
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-ansible-playbook playbook.yml 
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-ansible-playbook playbook.yml 
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-ansible-playbook playbook.yml 
-ls
-curl http://node5
-curl http://node3
-vi playbook.yml
-ansible-playbook playbook.yml 
-curl http://node3
-vi playbook.yml
-curl http://node3
-ansible-playbook playbook.yml 
-curl http://node3
-vi playbook.yml
-ansible-playbook playbook.yml 
-vi playbook.yml
-ansible-playbook playbook.yml 
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-ansible-playbook playbook.yml 
-vi playbook.yml
-ansible-playbook playbook.yml 
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-vi playbook.yml
-ansible-playbook playbook.yml 
-vi playbook.yml
-ansible-playbook playbook.yml 
-vi playbook.yml
-ansible-playbook --syntax-check playbook.yml 
-vi playbook.yml
-ansible-playbook playbook.yml 
-vi playbook.yml
-ls
-cd ..
-ls
-mkdir toPlaybook
-cd ansible-nginx/
-ls
-cp hosts ../toPlaybook/
-cp ansible.cfg ../toPlaybook/
-cd ..
-ls
-cd toPlaybook/
-ls
-vi hosts 
-cat ansible.cfg 
-vi ansible.cfg 
-ls
-ansible-inventory --list
-ls
-vi userANDfile.yml
-ls
-cat ../ansibleLab/fact.yml
-ls
-vi userANDfile.yml 
-
-vi userANDfile.yml 
-cat hosts 
-vi userANDfile.yml 
-cat hosts 
-vi userANDfile.yml 
-cat ../ansibleLab/fact.yml
-vi userANDfile.yml 
-cat ../ansible-nginx/
-cat ../ansible-nginx/playbook.yml 
-vi userANDfile.yml 
-cat ../ansible-nginx/playbook.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-ansible-playbook userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-ansible-playbook userANDfile.yml 
-ansible node1 -m shell -a "cat /etc/passwd"
-vi userANDfile.yml 
-ansible-playbook --syntax-check userANDfile.yml 
-ansible-playbook userANDfile.yml 
-ansible node1 -m shell -a "cat /etc/passwd"
-ansible node1 -m shell -a "cat /etc/groups"
-ansible node1 -m shell -a "cat /etc/group"
-ansible node1 -m shell -a "cat /etc/passwd"
-ansible node1 -m shell -a "cat /etc/shadow"
-ssh jura1@10.10.8.3
-ssh jura1@10.10.8.4
-vi userANDfile.yml 
-   cat /etc/passwd
-ls
-cd toPlaybook/
-ls
-cat hosts 
-ls
-cd ..
-ls
-mkdir userAndFile
-ls
-cd userAndFile/
-ls
-cd. .
-cd ..
-ls
-cd top
-sl
-ls
-cd toPlaybook/
-ls
-cp hosts ../userAndFile/
-cp ansible.cfg ../userAndFile/
-ls
-cd
-cd userAndFile/
-ls
-cd ..
-ls
-cd toPlaybook/
-ls
-cp userANDfile.yml ../userAndFile/
-ls
-vi hosts 
-ls
-cd ..
-ls
-cd toPlaybook/
-ls
-cat ansible.cfg 
-cat hosts 
-ls
-cat userANDfile.yml 
-vi userANDfile.yml 
-ansible node1 -m copy -a "content='kevin ALL=(ALL) NOPASSWD: ALL' dest=/etc/sudoers.d/kevin mode=0644 validate='/usr/sbin/visudo -cf %s'"
-vi userANDfile.yml 
-cat userANDfile.yml 
-ls
-cd ..
-ls
-vi ansibleLab/
-cd ansibleLab/
-ls
-vi fact.yml 
-for i in (4...7);do ping 10.10.8.${i} ;done
-for i in (4..7);do ping 10.10.8.${i} ;done
-for i in {4..7};do ping 10.10.8.${i} ;done
-for i in {4..7};do ssh[B 10.10.8.${i} ;done
-vi when_test.yml
-ansible-playbook when_test.yml
-mkdir files
-cd files/
-touch index.html
-cat<<EOF>index.html
-<H1> Hello Mr. John </H1>
-EOF
-
-vi user
-mv user user.yml
-vi pb.yml
-ls
-vi pb.yml
-ls
-cd ..
-ls
-cat ansible.cfg 
-ls
-cat hosts 
-cd ..
-ls
-cd ansibleLab/
-ls
-vi hosts 
-cd files/
-ls
-vi pb.yml 
-ls
-ansible all -m shell -a 'cat /etc/lsb-release'
-ansible all -m shell -a ''
-ansible all -m shell -a 'ls'
-ls
-cd ..
-sl
-vi hosts 
-ansible all -m shell -a 'ls'
-ansible all -m shell -a ''
-ansible all -m shell -a 'cat /etc/lsb-realese'
-ERROR! No argument passed to shell module
-jura_m@server:~/ansibleLab$ ansible all -m shell -a 'cat /etc/lsb-realese'
-server | FAILED | rc=1 >>
-cat: /etc/lsb-realese: No such file or directorynon-zero return code
-node1 | FAILED | rc=1 >>
-cat: /etc/lsb-realese: No such file or directorynon-zero return code
-node3 | FAILED | rc=1 >>
-cat: /etc/lsb-realese: No such file or directorynon-zero return code
-node2 | FAILED | rc=1 >>
-cat: /etc/lsb-realese: No such file or directorynon-zero return code
-node4 | FAILED | rc=1 >>
-cat: /etc/lsb-realese: No such file or directorynon-zero return code
-ansible all -m shell -a "echo hello"
-jura_m@server:~/ansibleLab$ ansible all -m shell -a '/etc/lsb-realese'
-ansible all -m shell -a '/etc/lsb-realese'
-ansible all -m shell -a 'cat /etc/lsb-realese'
-ansible all -m shell -a 'cat /etc/lsb-release'
-ls
-cd files/
-ls
-vi pb.yml 
-ansible-playbook --syntax-check pb.yml 
-ansible-playbook --syntax-check pb.yml -i hosts
-ls
-ansible-playbook --syntax-check pb.yml -i ../hosts
-ansible-playbook pb.yml
-ansible-playbook -i inventory.ini pb.yml
-ansible-playbook -i ../hosts  pb.yml
-ls
-vi pb.yml
-ansible-playbook -i ../hosts  pb.yml
-ls
-ansible all -m shell -a 'cat /var/www/html/test1.txtx'
-vi pb.yml
-ansible all -m shell -a 'cat /var/www/html/test01.txt'
-ansible node1 -m shell -a 'cat /var/www/html/test01.txt'
-cd ..
-ansible node1 -m shell -a 'cat /var/www/html/test01.txt'
-ansible node1 -m shell -a 'cat /var/www/html/test02.txt'
-ansible node1 -m shell -a 'ls /var/www/html/test02.txt'
-ansibl node1 -m ansible.builtin.setup | egrep dist
-ansibl node1 -m ansible.builtin.setup | egrep destri
-ansibl node1 -m ansible.builtin.setup | egrep dest
-ansible an-node1 -m ansible.builtin.setup | egrep ansible_distribution
-ansible node1 -m ansible.builtin.setup | egrep ansible_distribution
-ansible node1 -m ansible.builtin.setup > builtin.setup.json
-ls
-cat builtin.setup.json 
-ls
-cd files/
-cd ..
-ls
-cd files/
-ls
-cat user.yml 
-ls
-cat user.yml 
-ls
-vi pb.yml 
-ls
-vi pb.yml 
-ls
-ansible-p
-ansible-playbook pb.yml 
-ansible-playbook pb.yml -i ../hosts
-vi pb.yml 
-ls
-mkdir ansible-nginx-project
-cd
-mkdir ans-nginx-pjt
-cd ans-nginx-pjt/
-vi hosts
-cat<<EOF>common-hardening.yml
----
-- name: Apply common hardening to all servers
-  hosts: all
-  become: true
-  tasks:
-    - name: Install UFW firewall
-      ansible.builtin.apt:
-        name: ufw
-        state: present
-
-    - name: Allow SSH traffic
-      community.general.ufw:
-        rule: allow
-        name: OpenSSH
-
-    - name: Allow HTTP traffic on webservers only
-      community.general.ufw:
-        rule: allow
-        name: Nginx Full # 'nginx' 대신 더 일반적인 'Nginx Full' 프로필 사용
-      when: inventory_hostname in groups['webservers'] # 이 조건을 추가
-
-    - name: Enable UFW
-      community.general.ufw:
-        state: enabled
-EOF
-
-ls
-vi common-hardening.yml 
-cat<<EOF>web-deploy.yml
----
-- name: Deploy Nginx web server
-  hosts: webservers
-  become: true
-  tasks:
-    - name: Install nginx
-      ansible.builtin.apt:
-        name: nginx
-        state: present
-        update_cache: yes
-
-    - name: Start and enable nginx service
-      ansible.builtin.service:
-        name: nginx
-        state: started
-        enabled: yes
-EOF
-
-ls
-cd ..
-ls
-cd ansibleLab/
-ls
-cp ansible.cfg ../ans-nginx-pjt/
-cd ..
-cd ans-nginx-pjt/
-ls
-cat<<EOF>site.yml
----
-- import_playbook: common-hardening.yml
-- import_playbook: web-deploy.yml
-EOF
-
-ls
-cat ansible.cfg 
-vi hosts 
-ls
-vi site.yml 
-ls
-ansible-playbook -i ansible.cfg site.yml 
-ls
-cat vi common-hardening.yml 
-common-hardening.yml 
-ls
-vi site.yml 
-vi web-deploy.yml 
-ls
-cat hosts 
-ls
-vi ansible.cfg 
-ls
-vi hosts
-vi ansible.cfg 
-ansible webservers -m ping
-ansible webservers -m command -a "whoami" -b
-ls
 ansible-playbook --syntax-checkn site.yml 
 ansible-playbook --syntax-check site.yml 
 ansible-playbook --syntax-check 
@@ -1998,3 +1428,573 @@ vi dbPlaybook.yml
 ls
 ansible-playbook -i hosts cleanup.yml
 ansible-playbook -i hosts servers.yml 
+ls
+cd test-ansible/
+ls
+cd ansible-
+cd ansible-wordpress/
+ls
+cat wePls
+cat webPlaybook.yml 
+ansible-vault create password.yml
+cat password.yml 
+vi password.yml 
+ansible-vault edit password.yml 
+
+ansible-vault view password.yml 
+ansible-playbook --help
+ansible-playbook password.yml 
+ls
+vi webPlaybook.yml 
+ls
+vi webPlaybook.yml 
+ansible-vault edit password.yml 
+ansible-playbook --syntax-check password.yml -J
+ls
+ansible-vault 
+ansible-vault view password.yml 
+ansible-playbook -C --ask-vaul
+ls
+ansible-playbook -C --ask-vault-pass servers.yml
+vi webPlaybook.yml 
+ansible-playbook -C --ask-vault-pass servers.yml
+vi webPlaybook.yml 
+ansible-playbook -C --ask-vault-pass servers.yml
+ls
+cat servers.yml 
+cat requirements.yml 
+ls
+ansible-vault decrypt password.yml 
+vi password.yml
+ls
+ansible-playbook cleanup.yml
+ansible-playbook  servers.yml
+history 
+ls
+cd
+ls
+cd test-ansible/
+ls
+cd ansible-LAB/
+ansible-console 
+ls
+vi hosts
+ansible-console 
+ls
+vi hosts 
+ls
+cp hosts hosts.ori
+ls
+vi hosts
+mv hosts.ori hosts.dynamic
+vi hosts.dynamic 
+ls
+ansible-inventory -i hosts --list
+ansible-inventory -i inventory.yml --graph
+ansible-inventory -i hosts --graph
+ansible -i inventory.yml all -m ping
+ansible -i hosts all -m ping
+ls
+ansible -i hosts.dynamic all -m ping
+ansible-inventory -i hosts.dynamic 
+ansible-inventory -i hosts.dynamic --list
+ansible -i inventory.yml all -m ping
+ansible -i hosts.dynamic all -m ping
+ls
+vi hosts.dynamic 
+l
+ansible-pull 
+ansible-doc
+ansible-doc -l
+ansible-galaxy list
+ansible-galaxy role search mariadb
+ansible-galaxy install xolyu.mariadb
+ansible-galaxy list
+ansible-galaxy info xolyu.mariadb
+ls
+cd ..
+ls
+cd ..
+ls
+mkdir jura-setup-project
+ls
+cd jura-setup-project/
+ls
+ansible-galaxy init role defaultSetup
+ls
+ansible-galaxy init
+ansible-galaxy init baseSettings --init-path ./
+ls
+cd baseSettings/
+ls
+cat README.md 
+ls
+cd ..
+ls
+ls -al
+cd baseSettings/
+ls -al
+cd ..
+ls
+mv baseSettings initSetup
+ls
+cd initSetup/
+ls
+cd ..
+ls
+tree -L 3 initSetup/
+ls
+mkdir roles
+ls
+ansible-galaxy init --help
+ansible-galaxy init webInitSetup --init-path roles/
+ansible-galaxy init webSetup --init-path roles/
+ansible-galaxy init monitoringSetup --init-path roles/
+ansible-galaxy init userAddSetting --init-path roles/
+ansible-galaxy init webserverSetup --init-path roles/
+ansible-galaxy init dbserverSetup --init-path roles/
+ansible-galaxy init securitySetting --init-path roles/
+ls
+cd roles/
+ls
+rm -rf webSetup/
+rm -rf webInitSetup/Setup/
+ls
+rm -rf webInitSetup
+ls
+cd ..
+ansible-galaxy init superuserAddSetting --init-path roles/
+ls
+cd roles/
+ls
+ls -al
+ls
+cd jura-setup-project/
+ls
+cd ..
+ls
+tree -L 7 jura-setup-project/
+ls
+ansible-galaxy init role --help
+history
+ansible-galaxy init securitySetting --init-path .
+ls
+cd securitySetting/
+ls -al
+cd /
+cd
+ls
+ls -al
+ls
+ls -al
+cd .ansible/
+ls
+cd roles/
+ls
+tree -L 5 geerlingguy.mysql/
+cd
+cd test-ansible/
+ls
+cd ansible-wordpress/
+ls
+cat webPlaybook.yml 
+vi webPlaybook.yml 
+ls
+cat requirements.yml 
+cat servers.yml 
+cat dbPlaybook.yml
+vi dbPlaybook.yml
+ls
+cat ansible.cfg 
+cat hosts 
+vi webPlaybook.yml 
+ls
+cd ..
+ls
+cd ..
+ls
+cd jura-setup-project/
+ls
+vi hosts
+ls
+cd ..
+ls
+cat hosts
+ls
+cd test-ansible/
+ls
+cd ansible-LAB/
+ls
+cp hosts.dynamic ~/hosts.ori
+cd
+ls
+cat hosts.ori
+cat hosts
+cat hosts.ori
+ls
+cat hosts.ori
+cat ansible.cfg
+cd jura-setup-project/
+vi hosts
+ls
+vi hosts
+ls
+mv hosts hosts.yml
+vi hosts.yml
+ls
+cd
+ls
+cat ansible.cfg
+ls
+cd jura-ansible-
+cd jura-setup-project/
+ls
+cat hosts.yml 
+vi hosts.yml 
+ls
+vi ansible.cfg
+cat hosts.yml 
+vi ansible.cfg
+ls
+vi ansible.cfg 
+ls
+mv hosts.yml inventory.yml
+ls
+ansible-playbook inventory.yml 
+ls
+vi ansible.cfg 
+ls
+ansible-inventory -i inventory.yml --list
+ls
+vi inventory.yml 
+ansible-inventory -i inventory.yml --list
+ls
+cat ansible.cfg 
+cat inventory.yml 
+ansible-inventory -i inventory.yml --list
+ls
+vi ansible.cfg 
+vi inventory.yml 
+ansible-inventory -i inventory.yml --list
+vi ansible.cfg 
+ls
+vi inventory.yml 
+ansible-inventory -i inventory.yml --list
+ls
+ls -al
+cd
+ls -al
+ls
+cd jura-setup-project/
+ls
+vi inventory.yml 
+ansible-inventory -i inventory.yml --list
+vi inventory.yml 
+ansible-inventory -i inventory.yml --list
+ls
+cd ..
+ls
+mv hosts.ori hosts.dyn
+ls
+cat hosts.dyn 
+ls
+cd jura-setup-project/
+ls
+cd initSetup/
+ls
+cd ..
+ls
+cd ..
+ls
+tree -L 4 jura-setup-project/
+ls
+cd jura-setup-project/
+ls
+touch summary-web.yml
+touch summary-monitoring.yml
+touch summary-db.yml
+cd roles/
+ls
+cd ..
+ls
+touch summary-useradd.yml
+ls
+rm -rf summary-useradd.yml 
+ls
+cd initSetup/
+ls
+vi README.md 
+ls
+cd jura-setup-project/
+ls
+mkdir tests
+ls
+cp ansible.cfg tests
+ls
+cp inventory.yml tests/
+ls
+cd initSetup/
+ls
+cd
+cd jura-setup-project/
+ls
+cd tests
+ls
+cd ..
+cd 
+ls
+git add jura-setup-project/
+git commit -m "ANSIBLE project : os setting and service setup First push commit"
+git push origin master
+git push origin main
+ls
+cd jura-setup-project/
+ls
+cd ..
+cd jura-setup-project/
+ls
+cd tests/
+ls
+vi cd ..
+ls
+ls -al
+cd ..
+ls
+cd roles/
+ls
+cd. .
+cd ..
+ls
+cd tests
+vi initsetup.yml
+ls
+cat initsetup.yml 
+cat inventory.yml 
+ls
+vi ansible.cf
+ls
+vi ansible.cfg 
+cat ansible.cfg 
+ls
+vi inventory.yml 
+ansible-inventory -i inventory.yml --list
+ansible-inventory -i inventory.yml --graph
+ls
+cat inventory.yml 
+ls
+cp inventory.yml inventory.yml.ori
+ls
+mv inventory.yml ..
+ls
+mkdir fin
+mv inventory.yml.ori  fin/
+ls
+cd ..
+ls
+cd initSetup/
+ls
+cd ..
+cat inventory.yml 
+ls
+cd tests/
+ls
+vi util-install.yml
+cat initsetup.yml 
+vi util-install.yml 
+ls
+vi initsetup.yml 
+ls
+mv initsetup.yml ..
+mv util-install.yml ..
+ls
+cd ..
+cd fin
+cd tests/
+ls
+cd fin
+ls
+cp inventory.yml.ori ../inventory.yml
+ls
+cd ..
+ls
+cd ..
+ls
+mv inventory.yml initSetup/
+ls
+mv initsetup.yml initSetup/
+mv util-install.yml initSetup/
+ls
+cd initSetup/
+ls
+cp inventory.yml ..
+ls
+cd ..
+ls
+cp ansible.cfg initSetup/
+ls
+cd initSetup/
+ls
+cd ..
+ls
+tree -L 3 .
+ls
+cd initSetup/
+ls
+cat initsetup.yml 
+ls
+vi util-install.yml 
+ls
+vi util-install.yml 
+ls
+ansible-playbook util-install.yml 
+ls
+ansible-playbook --syntax-check util-install.yml -i initsetup.yml 
+ls
+cat ansible.cfg 
+ansible-inventory -i inventory.yml --list
+ls
+ansible-playbook --syntax-check  util-install.yml
+ls
+vi initsetup.yml 
+vi inventory.yml 
+ls
+vi inventory.yml 
+ansible-playbook --syntax-check  util-install.yml
+vi util-install.yml 
+vi inventory.yml 
+ansible-playbook --syntax-check  util-install.yml
+ls
+cd ..
+ls
+vi inventory.yml 
+ls
+cat inventory.yml 
+ls
+cd initSetup/
+ls
+cp util-install.yml cleanup.yml
+ls
+vi cleanup.yml
+ansible-playbook --syntax-check cleanup.yml
+vi cleanup.yml 
+ls
+vi inventory.yml 
+ls
+vi cleanup.yml 
+vi inventory.yml 
+ls
+vi initsetup.yml 
+vi util-install.yml 
+ansible-playbook util-install.yml 
+vi util-install.yml 
+ls
+cat inventory.yml 
+ls
+vi util-install.yml 
+ansible-playbook util-install.yml 
+vi util-install.yml 
+ansible-playbook util-install.yml 
+ls
+vi cleanup.yml 
+ls
+ansible-playbook cleanup.yml 
+vi cleanup.yml 
+ansible-playbook --syntax-check cleanup.yml 
+ansible-playbook cleanup.yml 
+ls
+vi 
+ls
+cd jura-setup-project/
+ls
+cd initSetup/
+ls
+cat util-install.yml 
+ls
+cd templates/
+ls
+cd ..
+cat util-install.yml 
+cd ..
+ls
+cd initSetup/
+ansible-playbook 
+apt list docker.io
+ls
+cd jura-setup-project/
+ls
+cd initSetup/
+ls
+cat initsetup.yml 
+cat util-install.yml
+ansible-playbook util-install.yml 
+ls
+vi inventory.yml 
+cat initsetup.yml 
+vi util-install.yml
+ls
+mv util-install.yml tasks
+ls
+cd ..
+cd initSetup/
+ls
+vi initsetup.yml 
+ls
+ansible-playbook initsetup.yml 
+vi initsetup.yml 
+ansible-playbook initsetup.yml 
+vi initsetup.yml 
+ansible-playbook initsetup.yml 
+vi initsetup.yml 
+ansible-playbook initsetup.yml 
+ls
+vi util-setting.yml
+ls
+cd tasks/
+ls
+cat util-install.yml 
+ls
+cat main.yml 
+ls
+vi util-install.yml 
+ls
+cd ..
+ls
+vi util-setting.yml
+clear
+ls
+clear
+cat tasks/util-install.yml 
+vi util-setting.yml 
+sed -i s/gather_facts: ture/gather_facts: false/
+sed -e s/gather_facts: ture/gather_facts: false/
+sed -i %s/gather_facts: ture/gather_facts: false/
+sed -i ^s/gather_facts: ture/gather_facts: false/
+sed -i s/gather_facts: true/gather_facts: false/
+sed -i s/gather_facts: true/gather_facts: false/ tasks/util-install.yml 
+sed -i 's/gather_facts: true/gather_facts: false/' tasks/util-install.yml 
+cat tasks/util-install.yml 
+vi util-setting.yml 
+ls
+ansible-playbook --syntax-check util-setting.yml 
+cat util-setting.yml 
+ls
+ansible-playbook util-setting.yml 
+ls
+vi util-setting.yml 
+ansible-playbook util-setting.yml 
+vi initsetup.yml 
+ls
+mv util-setting.yml tasks/
+ls
+cat ls
+ls
+ansible-playbook initsetup.yml 
+ls
+cd tasks/
+ls
+mv util-setting.yml ..
+cd ..
+ls
+vi util-setting.yml 
+ls
+ansible-playbook --syntax-check util-setting.yml 
